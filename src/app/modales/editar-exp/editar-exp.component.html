@@ -1,0 +1,36 @@
+<div class="modal fade" id="modal-experiencias" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered justify-content-center">
+    <div class="modal-content text-white text-center rounded-4">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Editar tarjeta Trabajo</h3>
+        <button type="button" class="btn-close bg-white rounded-circle mb-4" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form #form="ngForm">
+            <div class="form-group m-3">
+              <label for="imgagenExp">Imagen empresa</label>
+              <input type="file" class="form-control text-center" id="imgagenExp" name="imgExp" [(ngModel)]="experienciaService.experienciaModal.imgExperiencia">
+            </div>
+            <div class="form-group m-3">
+              <label for="puestoTrabajo">Título del Puesto</label>
+              <input type="text" class="form-control text-center" id="puestoTrabajo" name="puesto" [(ngModel)]="experienciaService.experienciaModal.puesto">
+            </div>
+            <div class="form-group m-3">
+              <label for="anioTrabajo">Año inicio - Año fin</label>
+              <input type="text" class="form-control text-center" id="anioTrabajo" name="anio" [(ngModel)]="experienciaService.experienciaModal.anio">
+            </div>
+            <div class="form-group m-3">
+              <label for="descripcion">Descripción del puesto</label>
+              <textarea rows="5" type="text" class="form-control text-center" id="descripcion" name="descripcionTrabajo" [(ngModel)]="experienciaService.experienciaModal.descripcionTrabajo"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button (click)="editarExp()" type="button" data-bs-dismiss="modal" class="btn btn-primary">Aceptar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

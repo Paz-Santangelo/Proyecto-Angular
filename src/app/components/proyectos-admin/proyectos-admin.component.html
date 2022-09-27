@@ -1,0 +1,43 @@
+<section class="row d-flex justify-content-center text-center text-white mt-5">
+
+    <div class="col-12 mt-5">
+        <h1 id="proyectos">Proyectos</h1>
+        <div class="d-flex justify-content-end">
+            <div class="circle-add-card p-1" type="button" data-bs-toggle="modal"
+                data-bs-target="#modal-agregar-proyecto">
+                <img class="img-fluid" src="../../../assets/icons8-agregar-propiedad-48.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="container d-flex justify-content-center">
+        <div class="contenedor-secundario row g-5 mt-2 me-5 ms-5">
+            <div *ngFor="let proyecto of proyectos" class="col-12 col-md-6 col-lg-4">
+                <div class="card rounded-4">
+                    <div class="position-absolute text-light text-end pe-2" id="contenedor-btn-proyecto"
+                        style="right: 0;">
+                        <i (click)="traerProyecto(proyecto.id)" class="bi bi-pencil-fill rounded-circle text-center" type="button" data-bs-toggle="modal"
+                            data-bs-target="#modal-proyecto" id="circulos-edicion-proyecto"></i>
+                        <i (click)="eliminarProyecto(proyecto.id)" class="bi bi-trash3-fill rounded-circle text-center" type="button" data-bs-toggle="modal"
+                            data-bs-target="#modal-trash" id="circulos-edicion-proyecto"></i>
+                    </div>
+                    <img [src]="proyecto.imgProyecto" class="card-img-top img-fluid rounded-top" alt="...">
+                    <div class="card-body p-3">
+                        <h5 class="card-title">{{proyecto.nombreProyecto}}</h5>
+                        <p class="card-text">{{proyecto.descripcionProyecto}}</p>
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" class="btn">Ver</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!--<div class="card-group gap-4 m-5"></div>-->
+
+
+<app-agregar-proyecto></app-agregar-proyecto>
+<app-editar-proyecto></app-editar-proyecto>

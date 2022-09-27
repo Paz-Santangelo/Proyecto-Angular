@@ -1,0 +1,35 @@
+<div class="modal fade" id="modal-agregar-educacion" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered justify-content-center">
+    <div class="modal-content text-white text-center rounded-4">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Agregar nueva educación</h3>
+        <button type="button" class="btn-close bg-white rounded-circle mb-4" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="crearNuevoCurso()" #form="ngForm">
+          <div class="form-group m-3">
+            <label for="imagenCurso">Logo de la Institución</label>
+            <input type="file" class="form-control" name="imagenCurso" [(ngModel)]="imgCurso">
+          </div>
+          <div class="form-group m-3">
+            <label for="tituloCurso">Título del Curso</label>
+            <input type="text" class="form-control" name="tituloCurso" [(ngModel)]="tituloCurso">
+          </div>
+          <div class="form-group m-3">
+            <label for="anioCurso">Año inicio - Año fin</label>
+            <input type="text" class="form-control" name="anioCurso" [(ngModel)]="anio">
+          </div>
+          <div class="form-group m-3">
+            <label for="descripcionCurso">Descripción del Curso</label>
+            <textarea rows="5" type="text" class="form-control" name="descripcionCursoo" [(ngModel)]="descripcionCurso"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" data-bs-dismiss="modal" class="btn btn-primary">Aceptar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="modal fade" id="modal-editar-HS" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered justify-content-center">
+        <div class="modal-content text-white text-center rounded-4">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Editar tarjeta Hard & Soft</h3>
+                <button type="button" class="btn-close bg-white rounded-circle mb-4" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+
+            <div class="container">
+                <form (ngSubmit)="editarHabilidad()" #form="ngForm">
+                    <div class="form-group m-3">
+                        <label for="porcentaje"><h4>Porcentaje de habilidad</h4></label>
+                        <input type="text" class="form-control text-center" name="porcentaje" [(ngModel)]="skillService.habilidadModal.porcentaje">
+                    </div>
+                    <div class="form-group m-3">
+                        <label for="nombre"><h4>Nombre de habilidad</h4></label>
+                        <input type="text" class="form-control text-center" name="nombre" [(ngModel)]="skillService.habilidadModal.nombre">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" data-bs-dismiss="modal" class="btn btn-primary">Aceptar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

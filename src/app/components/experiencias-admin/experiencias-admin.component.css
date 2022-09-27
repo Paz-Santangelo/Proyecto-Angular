@@ -1,0 +1,74 @@
+.card{
+    background-color: rgba(255, 255, 255, 0.168); 
+    backdrop-filter: blur(15px);
+    width: 90%;
+}
+
+.card-text{
+    font-size: 22px;
+}
+
+.circle-add-card{
+    background: rgb(128, 66, 104);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-top: -50px;
+}
+
+#circulos-edicion{
+    font-size: 25px;
+    width: 45px; 
+    height: 45px;
+    margin-top: -40px;
+    margin-right: 15px;
+    background: rgb(128, 66, 104);
+}
+
+#circulos-edicion:hover{
+    transform: scale(1.05);
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 0 15px #a97cc7;
+}
+
+.img-fluid{
+    width: 230px;
+}
+
+@media(max-width: 768px){
+    .card {
+        width: 70%;
+        text-align: center;
+    }
+    
+    .img-fluid {
+        width: 150px;
+    }
+
+    .card-title{
+        font-size: 23px;
+    }
+
+    .card-subtitle{
+        font-size: 20px;
+    }
+
+    .card-text{
+        font-size: 18px;
+    }
+
+    .circle-add-card{
+        width: 45px;
+        height: 45px;
+        margin-top: -40px;
+    }
+
+    #circulos-edicion{
+        font-size: 20px;
+        width: 40px; 
+        height: 40px;
+        margin-top: -35px;
+        margin-right: 10px;
+    }
+}
+

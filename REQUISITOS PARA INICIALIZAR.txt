@@ -1,0 +1,3 @@
+Requisitos para arrancar app Portfolio:
+* Inicializar servidor json: npm run server
+* Inicializar localhost angular: ng serve -o

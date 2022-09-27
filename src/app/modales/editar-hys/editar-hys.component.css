@@ -1,0 +1,59 @@
+.modal{
+    --bs-modal-width: 600px;
+    --bs-modal-padding: 1rem;
+} 
+
+.modal-header{
+    border:none;
+} 
+
+.btn-close{
+    font-size: 20px;
+}
+
+.btn-close:focus{
+    background: transparent;
+    border-style:none;
+    box-shadow: none;
+}
+
+.modal-content{
+    background: rgba(219, 171, 201, 0.24);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 30px rgb(0, 0, 0);
+    width: 100%;
+}
+
+.modal-title{
+    font-size: 35px;
+}
+
+.modal-body{
+    font-size: 30px;
+}
+
+.form-control{
+    font-size: 23px;
+}
+
+.modal-footer{
+    border:none;
+}
+
+.btn{
+    background: #692a64;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 30%;
+}
+
+.btn:hover{
+    background: #692a64;
+    color: white;
+    transform: scale(1.05);
+    transition: 0.5s;
+}

@@ -1,0 +1,136 @@
+.nav-item{
+    width: 65px; 
+    height: 65px;
+    text-align: center;
+    padding: 1px;
+    border-radius: 50%; 
+    border: 3px solid #d8e2dc;
+    margin: 0 10px;
+ }
+
+/* Diseño iconos en pagina home */
+.nav-item .fa{
+    font-size: 35px;
+    color: #d8e2dc; 
+    margin-top: 3px; 
+   
+ }
+
+.nav-item .fa-github{
+    font-size: 40px;
+} 
+ 
+.nav-item .user{
+     font-size: 40px;
+     color: #d8e2dc; 
+     margin-bottom: 20px;
+     align-items: center;
+     transition: all 0.5s ease;
+  }
+ 
+.nav-item:hover.linkedin{
+     border: 3px solid #1068b1;
+     box-shadow: 0 0 15px #1068b1;
+     transform: scale(1.1);
+     transition: 0.5s;
+ }
+ 
+ .nav-item:hover .fa-linkedin{
+     color: #1068b1;
+     transform: scale(1.1);
+     transition: 0.5s;
+ }
+ 
+ .nav-item:hover.github{
+     border: 3px solid #caced6;
+     box-shadow: 0 0 15px #caced6;
+     transform: scale(1.1);
+     transition: 0.5s;
+ }
+ 
+ .nav-item:hover .fa-github{
+     color: #caced6;
+     text-shadow: 0 0 15px #caced6;
+     transform: scale(1.1);
+     transition: 0.5s;
+ }
+ 
+ 
+ .nav-item:hover.instagram{
+     border: 3px solid #ca1995;
+     box-shadow: 0 0 15px #ca1995;
+     transform: scale(1.1);
+     transition: 0.5s;
+ }
+ 
+ .nav-item:hover .fa-instagram{
+     color: #ca1995;
+     text-shadow: 0 0 15px #ca1995;
+     transform: scale(1.1);
+     transition: 0.5s;
+ }
+ 
+ .nav-item:hover.user{
+     border: 3px solid #05af76;
+     box-shadow: 0 0 15px #05af76;
+     transform: scale(1.1);
+     transition: 0.5s;
+ }
+ 
+.nav-item:hover .fa-user{
+     color: #05af76;
+     text-shadow: 0 0 15px #05af76;
+     transform: scale(1.1);
+     transition: 0.5s;
+}
+
+@media(max-width: 768px){
+    .navbar{
+        flex-direction: column;        
+    }
+
+    .navbar-nav{
+        justify-content: center;
+    }
+
+     /* circulos */
+     .nav-item{
+        width: 50px; 
+        height: 50px;
+        border-radius: 50%; 
+        border: 2px solid #d8e2dc;
+        margin: 0 10px;
+        transition: all 0.5s ease;
+     }
+    
+    /* acomodando iconos dentro de los circulos*/
+    .nav-item .fa{
+        font-size: 30px;
+        position: relative;
+        bottom: 6px;
+    }
+   
+    .nav-item:hover.linkedin{
+        border: 2px solid #1068b1;
+    }
+
+    .nav-item .fa-github{
+        margin-top: 5px;
+    }
+  
+    .nav-item:hover.github{
+        border: 2px solid #caced6;
+    }
+
+    .nav-item .fa-instagram{
+        margin-top: 5px;
+    }
+    
+    .nav-item:hover.instagram{
+        border: 2px solid #c7088e;
+    }
+    
+    .nav-item:hover.user{
+        border: 2px solid #05af76;
+    }
+}

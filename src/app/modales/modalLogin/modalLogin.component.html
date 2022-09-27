@@ -1,0 +1,31 @@
+<!------------- MODAL------------->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered justify-content-center">
+    <div class="modal-content rounded-4 p-1">
+      <div class="modal-header">
+        <h1 class="modal-title text-light" id="exampleModalLabel">Iniciar Sesión</h1>
+        <button type="button" class="btn-close bg-white rounded-circle" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form  (ngSubmit)="onLogin()" class="row justify-content-center mb-4">
+          <div class="col-sm-10">
+            <div>
+              <label for="userEmail"></label>
+              <input class="form-control text-center mb-2" type="email" placeholder="Ingrese su email" id="userEmail" name="email" [(ngModel)]="email">
+            </div>
+            <div>
+              <label for="userPassword"></label>
+              <input class="form-control text-center" type="password" id="inputPassword" placeholder="Ingrese su clave"
+                id="userPassword" name="password" [(ngModel)]="password">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn">Ingresar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

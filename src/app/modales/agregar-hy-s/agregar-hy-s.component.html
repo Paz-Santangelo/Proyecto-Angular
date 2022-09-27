@@ -1,0 +1,27 @@
+<div class="modal fade" id="modal-agregar-HS" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered justify-content-center">
+    <div class="modal-content text-white text-center rounded-4">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Agregar tarjeta Hard & Soft</h3>
+        <button type="button" class="btn-close bg-white rounded-circle mb-4" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body d-flex justify-content-center">
+        <form (submit)="crearNewSkill()" class="w-100">
+          <div class="form-group m-3">
+            <label>Porcentaje</label>
+            <input type="text" class="form-control text-center" name="porcentaje" id="input-porcentaje" [(ngModel)]="porcentaje">
+          </div>
+          <div class="form-group m-3">
+            <label>Nombre</label>
+            <input type="text" class="form-control text-center" name="nombre" [(ngModel)]="nombre">
+          </div>
+          <div class="modal-footer">
+            <button type="submit" data-bs-dismiss="modal" class="btn btn-primary">Aceptar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

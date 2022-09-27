@@ -1,0 +1,96 @@
+{
+  "perfil": [
+    {
+      "id": "admin",
+      "imgPerfil": "./assets/foto-perfil.jpg",
+      "nombreCompleto": "Maria Paz Santangelo",
+      "titulo": "Developer Full Stack Junior",
+      "acerca": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero labore quidem ea tempora vitae rem laboriosam nemo repellendus ab ad, quisquam deleniti quos voluptatem, sunt facilis porro. Et, eveniet voluptatem!"
+    }
+  ],
+  "experiencias": [
+    {
+      "imgExperiencia": "./assets/APLogo.png",
+      "puesto": "Trabajo 1",
+      "anio": "Año inicio - Año fin",
+      "descripcionTrabajo": "Lorem ipsum bla bla",
+      "id": 1
+    },
+    {
+      "imgExperiencia": "",
+      "puesto": "Trabajo 3",
+      "anio": "Año inicio - Año fin",
+      "descripcionTrabajo": "Lorem ipsum bla bla bla blaaaaa",
+      "id": 2
+    }
+  ],
+  "educacion": [
+    {
+      "id": 1,
+      "imgCurso": "./assets/APLogo.png",
+      "tituloCurso": "Curso 1",
+      "anio": "Año inicio - Año fin",
+      "descripcionCurso": "Descripción curso 1"
+    },
+    {
+      "tituloCurso": "Alura Latam",
+      "anio": "Año inicio - Año fin",
+      "descripcionCurso": "Javascript CRUD",
+      "id": 2
+    }
+  ],
+  "hardSoft": [
+    {
+      "id": 1,
+      "porcentaje": 80,
+      "nombre": "HTML"
+    },
+    {
+      "id": 2,
+      "porcentaje": 70,
+      "nombre": "CSS"
+    },
+    {
+      "porcentaje": "75",
+      "nombre": "JavaScript",
+      "id": 3
+    }
+  ],
+  "proyectos": [
+    {
+      "id": 1,
+      "imgProyecto": "./assets/proyecto.png",
+      "nombreProyecto": "Proyecto 1",
+      "descripcionProyecto": "Descripción Proyecto 1"
+    },
+    {
+      "id": 2,
+      "imgProyecto": "./assets/proyecto.png",
+      "nombreProyecto": "Proyecto 2",
+      "descripcionProyecto": "Descripción Proyecto 2"
+    },
+    {
+      "id": 3,
+      "imgProyecto": "./assets/proyecto.png",
+      "nombreProyecto": "Proyecto 3",
+      "descripcionProyecto": "Descripción Proyecto 3"
+    }
+  ],
+  "admin": [
+    {
+      "id": 1,
+      "email": "",
+      "password": ""
+    },
+    {
+      "email": "paz_santangelo@hotmail.com",
+      "password": "palta",
+      "id": 2
+    },
+    {
+      "email": "paz_santangelo@hotmail.com",
+      "password": "palta",
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+.circle-add-card{
+    background: rgb(128, 66, 104);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-top: -60px;
+}
+
+.container{
+    width: 90%;
+}
+
+.contenedor-secundario{
+    width: 100%;
+}
+
+#contenedor-btn-HardSoft{
+    margin-top: -20px;
+}
+
+#editar-HardSoft{
+    font-size: 25px;
+    width: 45px; 
+    height: 45px;
+    margin-right: 10px;
+    background: rgb(128, 66, 104);
+    padding-top: 2px;
+}
+
+#editar-HardSoft:hover{
+    transform: scale(1.05);
+    transition: 0.5s;
+    box-shadow: 0 0 15px #a97cc7;
+}
+
+.card{
+    background-color: rgba(255, 255, 255, 0.116);  
+    backdrop-filter: blur(20px);
+    width: 90%;
+}
+
+@media(max-width: 768px){
+
+    .contenedor-secundario{
+        width: 80%;
+    }
+
+    .card{
+        width: 70%;
+    }
+    
+    .circle-add-card{
+        width: 45px;
+        height: 45px;
+        margin-top: -50px;
+    }
+
+    #contenedor-btn-HardSoft{
+        margin-top: -20px;
+    }
+
+    #editar-HardSoft{
+        font-size: 20px;
+        width: 40px; 
+        height: 40px;
+        margin-right: 10px;
+    }
+
+    h4{
+        font-size: 15px;
+    }
+}

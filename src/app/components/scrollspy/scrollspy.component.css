@@ -1,0 +1,35 @@
+#barra-inferior{
+    background-color: rgba(165, 25, 123, 0.418); 
+    backdrop-filter: blur(30px);
+    border-radius: 8px; 
+    border:none; 
+    margin-top: 50px;
+}
+
+.accordion-item{
+    width: 60%;
+}
+
+.flecha-acordeon{
+    width: 30px;
+}
+
+.list-group-item-action{
+    font-size: 20px;
+    width: 140px;
+    --bs-list-group-color: rgb(245, 238, 238);
+    --bs-list-group-bg: #aa6f9b;
+    --bs-list-group-active-color: white;
+    --bs-list-group-active-bg: rgb(173, 22, 123);
+    --bs-list-group-active-border-color: transparent;
+    --bs-list-group-action-hover-color: white;
+    --bs-list-group-action-hover-bg: #aa6f9b;
+    
+}
+
+.list-group-item-action:hover{
+    color: rgb(248, 248, 248);
+    transform: scale(1.03);
+    transition: 0.5s;
+    border: none;
+}

@@ -1,0 +1,14 @@
+main{
+    padding-top: 30px;
+    padding-right: 90px;
+    padding-bottom: 80px;
+    padding-left: 90px;
+       
+}
+
+@media(max-width: 768px){
+    main{
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}

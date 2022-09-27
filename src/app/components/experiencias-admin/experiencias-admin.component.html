@@ -1,0 +1,33 @@
+<section class="row text-white mt-5">
+  <div class="col-12 mt-3 mb-4 pe-3">
+    <h1 class="mb-0 text-center" id="experiencia-laboral">Experiencias</h1>
+    <div class="d-flex justify-content-end">
+      <div class="circle-add-card p-1" type="button" data-bs-toggle="modal" data-bs-target="#modal-agregar">
+        <img class="img-fluid icono" src="../../../assets/icons8-agregar-propiedad-48.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div *ngFor="let experiencia of experiencias" class="d-flex justify-content-center">
+    <div class="card rounded-4 p-3 m-4" id="card-job-education">
+      <div class="d-flex justify-content-end text-light text-center">
+        <i (click)="traerUnaExperiencia(experiencia.id)" class="bi bi-pencil-fill rounded-circle p-1" type="button" data-bs-toggle="modal" data-bs-target="#modal-experiencias" id="circulos-edicion"></i>
+        <i class="bi bi-trash3-fill rounded-circle p-1" type="button" id="circulos-edicion" (click)="eliminarExp(experiencia.id)"></i>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-md-4 text-center p-3">
+          <img class="img-fluid" [src]="experiencia.imgExperiencia">
+        </div>
+        <div class="col-md-8 card-body">
+          <h2 class="card-title">{{experiencia.puesto}}</h2>
+          <h4 class="card-subtitle mb-3">{{experiencia.anio}}</h4>
+          <p class="card-text">{{experiencia.descripcionTrabajo}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-agregar-experiencia></app-agregar-experiencia>
+<app-editar-exp></app-editar-exp>
+<!--data-bs-target="#modal-experiencias" -->
