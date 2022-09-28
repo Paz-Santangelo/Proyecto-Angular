@@ -3,7 +3,7 @@
     <div *ngFor="let datoPerfil of perfil" class="row justify-content-center align-items-center">
         <div (click)="traerPerfil(datoPerfil.id)" class="row d-flex justify-content-end mt-2">
             <i class="bi bi-pencil-fill rounded-circle pt-2 p-1" type="button" data-bs-toggle="modal"
-                data-bs-target="#editarPerfil" id="circulos-edicion-perfil"></i>
+                data-bs-target="#editarPerfil" id="circulos-edicion-perfil" *ngIf="estaLogueado"></i>
         </div>
         <div class="col-md-4 col-lg-4" id="sobre-mi">
             <img class="img-fluid rounded-circle img-thumbnail border-1" [src]="datoPerfil.imgPerfil" id="foto" alt="">

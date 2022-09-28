@@ -13,16 +13,16 @@
           <div class="col-sm-10">
             <div>
               <label for="userEmail"></label>
-              <input class="form-control text-center mb-2" type="email" placeholder="Ingrese su email" id="userEmail" name="email" [(ngModel)]="email">
+              <input class="form-control text-center mb-2" type="email" placeholder="Ingrese su email" id="userEmail" name="email" [(ngModel)]="camposLogin.email">
             </div>
             <div>
               <label for="userPassword"></label>
               <input class="form-control text-center" type="password" id="inputPassword" placeholder="Ingrese su clave"
-                id="userPassword" name="password" [(ngModel)]="password">
+                id="userPassword" name="password" [(ngModel)]="camposLogin.password">
             </div>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn">Ingresar</button>
+            <button type="submit" class="btn" data-bs-dismiss="modal">Ingresar</button>
           </div>
         </form>
       </div>

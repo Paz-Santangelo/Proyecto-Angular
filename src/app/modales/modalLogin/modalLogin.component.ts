@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/service/auth.service';
-import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-modalLogin',
@@ -9,8 +8,10 @@ import { Route, Router } from '@angular/router';
 })
 export class ModalLoginComponent implements OnInit {
 
-  email = '';
-  password = '';
+  camposLogin = {
+    email : '',
+    password : '',
+  }
 
   constructor(private authService: AuthService) { }
 
@@ -18,10 +19,8 @@ export class ModalLoginComponent implements OnInit {
   }
 
   onLogin() {
-    console.log(this.email, this.password);
-    this.authService.login(this.email, this.password);
-    
-   
+    console.log(this.camposLogin);
+    this.authService.login(this.camposLogin);
   }
 
 }

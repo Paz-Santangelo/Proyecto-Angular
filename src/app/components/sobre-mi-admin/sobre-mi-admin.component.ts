@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { perfil } from 'src/app/models/perfil.model';
+import { AuthService } from 'src/app/service/auth.service';
 import { PerfilService } from 'src/app/service/perfil.service';
 
 @Component({
@@ -11,10 +12,19 @@ export class SobreMiAdminComponent implements OnInit {
 
   perfil: perfil[] = [];
 
-  constructor(public perfilService: PerfilService) { }
+  constructor(public perfilService: PerfilService, private authService: AuthService) { }
+
+  estaLogueado: boolean = false;
 
   ngOnInit(): void {
     this.perfilService.getAllPerfil().subscribe(data => {this.perfil = data});
+
+    if (this.authService.logIn) {
+      this.estaLogueado = true;
+    }else{
+      this.estaLogueado = false;
+    }
+    
   }
 
   traerPerfil(id:string){

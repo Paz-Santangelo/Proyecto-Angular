@@ -78,19 +78,9 @@
   ],
   "admin": [
     {
-      "id": 1,
-      "email": "",
-      "password": ""
-    },
-    {
       "email": "paz_santangelo@hotmail.com",
-      "password": "palta",
+      "password": "fghs",
       "id": 2
-    },
-    {
-      "email": "paz_santangelo@hotmail.com",
-      "password": "palta",
-      "id": 3
     }
   ]
 }

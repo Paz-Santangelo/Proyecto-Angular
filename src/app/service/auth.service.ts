@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Login } from '../models/Login';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Login } from '../models/Login';
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +10,11 @@ export class AuthService {
 
   url: string = ' http://localhost:3000/';
   token: any;
-  router: Router;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private router:Router) { }
 
-  login(email:string, password:string){
-    this.httpClient.post(this.url + "auth", {email, password}).subscribe((resp:any) => {
+  login(loginUser: Login){
+    this.httpClient.post(this.url + "admin", loginUser).subscribe((resp:any) => {
 
       //this.router.navigate(['admin']);
       //Para guardar la sesion en localStorage
