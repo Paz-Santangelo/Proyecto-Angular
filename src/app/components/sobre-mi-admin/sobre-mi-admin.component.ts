@@ -14,23 +14,20 @@ export class SobreMiAdminComponent implements OnInit {
 
   constructor(public perfilService: PerfilService, private authService: AuthService) { }
 
-  estaLogueado: boolean = false;
-
   ngOnInit(): void {
     this.perfilService.getAllPerfil().subscribe(data => {this.perfil = data});
 
-    if (this.authService.logIn) {
-      this.estaLogueado = true;
-    }else{
-      this.estaLogueado = false;
-    }
-    
+    this.isLoggedIn();
   }
 
   traerPerfil(id:string){
     this.perfilService.getProfile(id).subscribe(data => {
       this.perfilService.perfilModal = data;
     });
+  }
+
+  isLoggedIn(){
+    return this.authService.isLoggedIn();
   }
 
 }

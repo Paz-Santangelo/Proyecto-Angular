@@ -13,7 +13,6 @@
     font-size: 35px;
     color: #d8e2dc; 
     margin-top: 3px; 
-   
  }
 
 .nav-item .fa-github{
@@ -84,6 +83,40 @@
      transition: 0.5s;
 }
 
+/* ------------- PÁGINA ADMIN--------------- */
+/* diseño circulo en pagina admin */
+.user-admin{
+    width: 70px; 
+    height: 70px;
+    text-align: center;
+    border-radius: 50%; 
+    border: 3px solid #d8e2dc;
+    margin: 10px;
+    float: left;
+    transition: all 0.5s ease;
+}
+
+.user-admin:hover{
+    border: 3px solid #e71146;
+    box-shadow: 0 0 30px #e71146;
+}
+
+/*icono user pagina admin*/
+.icono-user-admin{
+    font-size: 35px;
+    color: #d8e2dc; 
+    margin-top: 11px;
+    transition: all 0.5s ease;
+}
+
+.user-admin:hover .icono-user-admin{
+    color: #e71146;
+    text-shadow: 0 0 30px #e71146;
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+
 @media(max-width: 768px){
     .navbar{
         flex-direction: column;        
@@ -102,12 +135,28 @@
         margin: 0 10px;
         transition: all 0.5s ease;
      }
-    
+
+     .user-admin{
+        width: 50px; 
+        height: 50px;
+        border: 2px solid #d8e2dc;
+    }
+
     /* acomodando iconos dentro de los circulos*/
     .nav-item .fa{
         font-size: 30px;
         position: relative;
         bottom: 6px;
+    }
+
+    .icono-user-admin{
+        font-size: 30px;
+        position: relative;
+        bottom: 5px;
+    }
+
+    .fa-user{
+        margin-top: 12px !important;
     }
    
     .nav-item:hover.linkedin{
@@ -124,6 +173,7 @@
 
     .nav-item .fa-instagram{
         margin-top: 5px;
+        margin-right: 1px;
     }
     
     .nav-item:hover.instagram{

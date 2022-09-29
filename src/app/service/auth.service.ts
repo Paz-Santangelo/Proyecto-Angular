@@ -9,27 +9,29 @@ import { Login } from '../models/Login';
 export class AuthService {
 
   url: string = ' http://localhost:3000/';
-  token: any;
+  token:string = 'hola mundo';
+  key: string = 'auth_token';
+
 
   constructor(private httpClient: HttpClient, private router:Router) { }
 
   login(loginUser: Login){
-    this.httpClient.post(this.url + "admin", loginUser).subscribe((resp:any) => {
+    //this.httpClient.post(this.url + "admin", loginUser).subscribe((resp:any) => {
 
-      //this.router.navigate(['admin']);
+      this.router.navigate(['']);
       //Para guardar la sesion en localStorage
-      localStorage.setItem('auth_token', resp.token);
-    })
+      localStorage.setItem(this.key, this.token);
+    //})
   };
 
   // Es para cerrar sesion, eliminando el token de localStorage
   logout() {
-    localStorage.removeItem('token');
+    localStorage.removeItem(this.key);
   }
 
   //Servicio para verificar si la sesion existe, devuelve un booleano que determina si un usuario esta autenticado
-  public get logIn():boolean{
-    return (localStorage.getItem('token') !== null);
+  public isLoggedIn():boolean{
+    return (localStorage.getItem(this.key) !== null);
   }
 
 }

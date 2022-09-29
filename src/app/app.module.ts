@@ -14,7 +14,6 @@ import { ModalLoginComponent } from './modales/modalLogin/modalLogin.component';
 import { ExperienciasAdminComponent } from './components/experiencias-admin/experiencias-admin.component';
 import { AgregarExperienciaComponent } from './modales/agregar-experiencia/agregar-experiencia.component';
 import { EditarExpComponent } from './modales/editar-exp/editar-exp.component';
-import { EliminarTarjetaComponent } from './modales/eliminar-tarjeta/eliminar-tarjeta.component';
 import { SobreMiAdminComponent } from './components/sobre-mi-admin/sobre-mi-admin.component';
 import { EditarSobreMiComponent } from './modales/editar-sobre-mi/editar-sobre-mi.component';
 import { EducacionAdminComponent } from './components/educacion-admin/educacion-admin.component';
@@ -40,7 +39,6 @@ import { AdminComponent } from './components/admin/admin.component';
     ExperienciasAdminComponent,
     AgregarExperienciaComponent,
     EditarExpComponent,
-    EliminarTarjetaComponent,
     SobreMiAdminComponent,
     EditarSobreMiComponent,
     EducacionAdminComponent,

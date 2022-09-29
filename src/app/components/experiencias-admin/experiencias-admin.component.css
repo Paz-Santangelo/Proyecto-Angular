@@ -1,19 +1,15 @@
-.card{
-    background-color: rgba(255, 255, 255, 0.168); 
-    backdrop-filter: blur(15px);
-    width: 90%;
-}
-
-.card-text{
-    font-size: 22px;
-}
-
 .circle-add-card{
     background: rgb(128, 66, 104);
     border-radius: 50%;
     width: 60px;
     height: 60px;
     margin-top: -50px;
+}
+
+.card{
+    background-color: rgba(255, 255, 255, 0.055); 
+    backdrop-filter: blur(2px);
+    width: 80%;
 }
 
 #circulos-edicion{
@@ -34,6 +30,11 @@
 .img-fluid{
     width: 230px;
 }
+
+.card-text{
+    font-size: 22px;
+}
+
 
 @media(max-width: 768px){
     .card {

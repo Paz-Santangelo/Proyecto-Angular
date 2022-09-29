@@ -31,8 +31,8 @@
 }
 
 .card{
-    background-color: rgba(129, 125, 125, 0.171); 
-    backdrop-filter: blur(15px); 
+    background-color: rgba(255, 255, 255, 0.055); 
+    backdrop-filter: blur(2px);
 }
 
 .card-title{

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Experiencias } from 'src/app/models/experiencia';
+import { AuthService } from 'src/app/service/auth.service';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
 
 @Component({
@@ -11,10 +12,12 @@ export class ExperienciasAdminComponent implements OnInit {
 
   experiencias: Experiencias[] = [];
 
-  constructor(private experienciaService: ExperienciaService) { }
+  constructor(private experienciaService: ExperienciaService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.cargarEperiencia();
+
+    this.isLoggedIn();
   }
 
   //Para traer todos los datos del JSON SERVER
@@ -36,5 +39,9 @@ export class ExperienciasAdminComponent implements OnInit {
       alert("Tarjeta de Experiencia laboral eliminada");
       window.location.reload();
     })
+  }
+
+  isLoggedIn(){
+    return this.authService.isLoggedIn();
   }
 }

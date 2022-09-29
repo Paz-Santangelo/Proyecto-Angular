@@ -1,18 +1,23 @@
-<section class="row d-flex justify-content-center align-items-center m-3 ps-3 pe-3 pb-4 text-white text-center"
-    id="sobre-mi-admin">
-    <div *ngFor="let datoPerfil of perfil" class="row justify-content-center align-items-center">
-        <div (click)="traerPerfil(datoPerfil.id)" class="row d-flex justify-content-end mt-2">
-            <i class="bi bi-pencil-fill rounded-circle pt-2 p-1" type="button" data-bs-toggle="modal"
-                data-bs-target="#editarPerfil" id="circulos-edicion-perfil" *ngIf="estaLogueado"></i>
-        </div>
-        <div class="col-md-4 col-lg-4" id="sobre-mi">
-            <img class="img-fluid rounded-circle img-thumbnail border-1" [src]="datoPerfil.imgPerfil" id="foto" alt="">
-        </div>
-        <div class="col-md-8 col-lg-8 pt-3 text-white text-center">
-            <h1 class="display-4 nombre">{{datoPerfil.nombreCompleto}}</h1>
-            <h3 class="titulo">{{datoPerfil.titulo}}</h3>
-            <p class="mt-4" id="texto-presentacion">{{datoPerfil.acerca}}</p>
+<section class="row d-flex justify-content-center align-items-center ms-5 me-5 text-white text-center">
+
+    <div class="p-5" id="sobre-mi-admin">
+        <div *ngFor="let datoPerfil of perfil" class="row justify-content-center align-items-center">
+            <div (click)="traerPerfil(datoPerfil.id)" class="row d-flex justify-content-end">
+                <i class="bi bi-pencil-fill rounded-circle pt-2 p-1" type="button" data-bs-toggle="modal"
+                    data-bs-target="#editarPerfil" id="circulos-edicion-perfil" *ngIf="isLoggedIn()"></i>
+            </div>
+            <div class="col-md-3 col-lg-3 pb-2" id="sobre-mi">
+                <img class="img-fluid rounded-circle img-thumbnail mt-3 border-1" [src]="datoPerfil.imgPerfil" id="foto"
+                    alt="">
+            </div>
+            <div class="col-md-9 col-lg-9">
+                <h1 class="display-4 nombre">{{datoPerfil.nombreCompleto}}</h1>
+                <h3 class="titulo">{{datoPerfil.titulo}}</h3>
+                <p class="mt-4" id="texto-presentacion">{{datoPerfil.acerca}}</p>
+            </div>
         </div>
     </div>
+
+    
 </section>
 <app-editar-sobre-mi></app-editar-sobre-mi>

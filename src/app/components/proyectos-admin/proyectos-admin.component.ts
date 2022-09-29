@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Proyecto } from 'src/app/models/proyecto';
+import { AuthService } from 'src/app/service/auth.service';
 import { ProyectosService } from 'src/app/service/proyectos.service';
 
 @Component({
@@ -11,10 +12,12 @@ export class ProyectosAdminComponent implements OnInit {
 
   proyectos: Proyecto[] = [];
 
-  constructor(private proyectosService: ProyectosService) { }
+  constructor(private proyectosService: ProyectosService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.proyectosService.getAllProjects().subscribe(data => this.proyectos = data);
+
+    this.isLoggedIn();
   }
 
   traerProyecto(id:number){
@@ -31,4 +34,7 @@ export class ProyectosAdminComponent implements OnInit {
     })
   }
 
+  isLoggedIn(){
+    return this.authService.isLoggedIn();
+  }
 }

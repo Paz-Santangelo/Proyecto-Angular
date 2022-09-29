@@ -19,7 +19,7 @@ export class ModalLoginComponent implements OnInit {
   }
 
   onLogin() {
-    console.log(this.camposLogin);
+    //console.log(this.camposLogin);
     this.authService.login(this.camposLogin);
   }
 

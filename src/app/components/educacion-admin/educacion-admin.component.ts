@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Educacion } from 'src/app/models/educacion';
+import { AuthService } from 'src/app/service/auth.service';
 import { EducacionService } from 'src/app/service/educacion.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class EducacionAdminComponent implements OnInit {
 
   cursos: Educacion[] = [];
 
-  constructor(private educacionService: EducacionService) { }
+  constructor(private educacionService: EducacionService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.educacionService.getAllEducaciones().subscribe(data => this.cursos = data);
@@ -29,5 +30,9 @@ export class EducacionAdminComponent implements OnInit {
       alert("Tarjeta de Educación eliminada");
       window.location.reload();
     })
+  }
+
+  isLoggedIn(){
+    return this.authService.isLoggedIn();
   }
 }

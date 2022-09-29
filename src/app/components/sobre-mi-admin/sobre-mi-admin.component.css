@@ -1,6 +1,6 @@
 #sobre-mi-admin{
-    background-color: rgba(255, 255, 255, 0.168); 
-    backdrop-filter: blur(15px);
+    background-color: rgba(224, 214, 214, 0.055); 
+    backdrop-filter: blur(2px);
     border-radius: 24px;
 }
 
@@ -8,7 +8,7 @@
     font-size: 30px;
     width: 60px;
     height: 60px;
-    margin-top: -35px;
+    margin-top: -75px;
     margin-right: -5px;
     background: rgb(128, 66, 104);
 }
@@ -32,7 +32,7 @@
         font-size: 22px;
         width: 50px;
         height: 50px;
-        margin-top: -35px;
+        margin-top: -70px;
     }
 
     #foto{

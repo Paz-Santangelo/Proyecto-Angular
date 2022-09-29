@@ -3,8 +3,7 @@
     <div class="col-12 mt-5">
         <h1 id="proyectos">Proyectos</h1>
         <div class="d-flex justify-content-end">
-            <div class="circle-add-card p-1" type="button" data-bs-toggle="modal"
-                data-bs-target="#modal-agregar-proyecto">
+            <div class="circle-add-card p-1" type="button" data-bs-toggle="modal" data-bs-target="#modal-agregar-proyecto" *ngIf="isLoggedIn()">
                 <img class="img-fluid" src="../../../assets/icons8-agregar-propiedad-48.png" alt="">
             </div>
         </div>
@@ -14,8 +13,7 @@
         <div class="contenedor-secundario row g-5 mt-2 me-5 ms-5">
             <div *ngFor="let proyecto of proyectos" class="col-12 col-md-6 col-lg-4">
                 <div class="card rounded-4">
-                    <div class="position-absolute text-light text-end pe-2" id="contenedor-btn-proyecto"
-                        style="right: 0;">
+                    <div class="position-absolute text-light text-end pe-2" id="contenedor-btn-proyecto" style="right: 0;" *ngIf="isLoggedIn()">
                         <i (click)="traerProyecto(proyecto.id)" class="bi bi-pencil-fill rounded-circle text-center" type="button" data-bs-toggle="modal"
                             data-bs-target="#modal-proyecto" id="circulos-edicion-proyecto"></i>
                         <i (click)="eliminarProyecto(proyecto.id)" class="bi bi-trash3-fill rounded-circle text-center" type="button" data-bs-toggle="modal"
