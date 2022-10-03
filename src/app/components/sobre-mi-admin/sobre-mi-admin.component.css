@@ -1,7 +1,7 @@
 #sobre-mi-admin{
     background-color: rgba(224, 214, 214, 0.055); 
-    backdrop-filter: blur(2px);
     border-radius: 24px;
+    backdrop-filter: blur(10px) saturate(90%) brightness(120%);
 }
 
 #circulos-edicion-perfil{

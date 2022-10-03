@@ -1,3 +1,8 @@
+#modal-editar-HS{
+    background-color: rgba(78, 18, 38, 0.164);
+    backdrop-filter: blur(12px) saturate(90%) brightness(120%);
+}
+
 .modal{
     --bs-modal-width: 600px;
     --bs-modal-padding: 1rem;
@@ -18,9 +23,9 @@
 }
 
 .modal-content{
-    background: rgba(219, 171, 201, 0.24);
+    background: rgba(219, 171, 201, 0.418);
     backdrop-filter: blur(15px);
-    box-shadow: 0 0 30px rgb(0, 0, 0);
+    box-shadow: 0 0 30px rgba(105, 102, 102, 0);
     width: 100%;
 }
 

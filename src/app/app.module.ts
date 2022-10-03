@@ -28,6 +28,7 @@ import { EditarHysComponent } from './modales/editar-hys/editar-hys.component';
 import { ScrollspyComponent } from './components/scrollspy/scrollspy.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { AdminComponent } from './components/admin/admin.component';
     EditarHysComponent,
     ScrollspyComponent,
     HomeComponent,
-    AdminComponent
+    AdminComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

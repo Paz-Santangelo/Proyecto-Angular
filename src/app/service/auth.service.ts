@@ -16,12 +16,12 @@ export class AuthService {
   constructor(private httpClient: HttpClient, private router:Router) { }
 
   login(loginUser: Login){
-    //this.httpClient.post(this.url + "admin", loginUser).subscribe((resp:any) => {
+      //this.httpClient.post<any>(this.url + "admin", loginUser).subscribe((resp:any) => {
 
       this.router.navigate(['']);
       //Para guardar la sesion en localStorage
       localStorage.setItem(this.key, this.token);
-    //})
+   // })
   };
 
   // Es para cerrar sesion, eliminando el token de localStorage

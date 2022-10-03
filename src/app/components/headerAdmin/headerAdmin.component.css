@@ -17,15 +17,19 @@
 
 .nav-item .fa-github{
     font-size: 40px;
+    margin-top: 0px; 
 } 
  
 .nav-item .user{
      font-size: 40px;
      color: #d8e2dc; 
-     margin-bottom: 20px;
      align-items: center;
      transition: all 0.5s ease;
-  }
+}
+
+.fa-user{
+    margin-top: 10px !important;
+}
  
 .nav-item:hover.linkedin{
      border: 3px solid #1068b1;
@@ -105,7 +109,7 @@
 .icono-user-admin{
     font-size: 35px;
     color: #d8e2dc; 
-    margin-top: 11px;
+    margin-top: 13px !important;
     transition: all 0.5s ease;
 }
 

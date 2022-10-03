@@ -20,8 +20,9 @@
 
 .card{
     background-color: rgba(255, 255, 255, 0.055); 
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(10px) saturate(90%) brightness(120%);
     width: 90%;
+    border: none;
 }
 
 #editar-HardSoft{

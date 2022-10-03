@@ -9,21 +9,40 @@
       </div>
       <div class="modal-body">
 
-        <form  (ngSubmit)="onLogin()" class="row justify-content-center mb-4">
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="row justify-content-center mb-4">
           <div class="col-sm-10">
             <div>
               <label for="userEmail"></label>
-              <input class="form-control text-center mb-2" type="email" placeholder="Ingrese su email" id="userEmail" name="email" [(ngModel)]="camposLogin.email">
+              <input class="form-control text-center mb-2" type="email" placeholder="Ingrese su email" id="userEmail"
+                name="email" formControlName="email">
             </div>
+
+            <div *ngIf="Mail?.errors && Mail?.touched">
+              <div *ngIf="Mail?.hasError('required')" class="alert alert-danger" role="alert">
+                Debe ingresar el email
+              </div>
+              <div *ngIf="Mail?.hasError('email')" class="alert alert-danger" role="alert">
+                El formato del email debe ser válido.
+              </div>
+            </div>
+
             <div>
               <label for="userPassword"></label>
-              <input class="form-control text-center" type="password" id="inputPassword" placeholder="Ingrese su clave"
-                id="userPassword" name="password" [(ngModel)]="camposLogin.password">
+              <input class="form-control text-center mb-2" type="password" id="inputPassword" placeholder="Ingrese su clave"
+                id="userPassword" name="password" formControlName="password">
+            </div>
+
+            <div *ngIf="Password?.errors && Password?.touched">
+              <div *ngIf="Password?.hasError('required')" class="alert alert-danger" role="alert">
+                Debe ingresar la contraseña
+              </div>
             </div>
           </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn" data-bs-dismiss="modal">Ingresar</button>
+
+          <div class="modal-footer mt-4 justify-content-center">
+            <button type="submit" [disabled]="Mail?.hasError('required') || Password?.hasError('required')" class="btn" data-bs-dismiss="modal">Ingresar</button>
           </div>
+
         </form>
       </div>
     </div>

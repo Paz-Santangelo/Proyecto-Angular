@@ -1,0 +1,14 @@
+footer{
+    background-color: rgba(151, 16, 97, 0.137); 
+    backdrop-filter: blur(10px) saturate(90%) brightness(120%);
+    display: flex;
+    flex-direction: column;
+}
+
+p{
+    font-size: 20px;
+}
+
+.copyright-ap{
+    font-size: 15px;
+}
