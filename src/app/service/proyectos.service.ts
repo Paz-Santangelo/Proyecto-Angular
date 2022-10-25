@@ -14,7 +14,8 @@ export class ProyectosService {
     id: null,
     imgProyecto: '',
     nombreProyecto: '',
-    descripcionProyecto: ''
+    descripcionProyecto: '',
+    link: ''
   }
 
   constructor(private httpClient: HttpClient) { }

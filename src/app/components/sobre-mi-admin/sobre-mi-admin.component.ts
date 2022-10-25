@@ -20,7 +20,7 @@ export class SobreMiAdminComponent implements OnInit {
     this.isLoggedIn();
   }
 
-  traerPerfil(id:string){
+  traerPerfil(id:number){
     this.perfilService.getProfile(id).subscribe(data => {
       this.perfilService.perfilModal = data;
     });

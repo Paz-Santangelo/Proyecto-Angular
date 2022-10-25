@@ -1,0 +1,34 @@
+<section class="row d-flex justify-content-center text-white text-center mt-4">
+    <div class="col-12 mt-4">
+        <h2 id="soft-skills">Hards Skills</h2>
+        <div class="d-flex justify-content-end">
+            <div class="circle-add-card p-1" type="button" data-bs-toggle="modal" data-bs-target="#modal-agregar-HabDura" *ngIf="isLoggedIn()">
+                <img class="img-fluid" src="../../../assets/icons8-agregar-propiedad-48.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="container d-flex justify-content-center">
+        <div class="contenedor-secundario row mt-1">
+            <div *ngFor="let habilidad of habilidadesDuras" class="col-12 col-md-6 col-lg-4 g-5 d-flex justify-content-center">
+                <div class="card rounded-4 p-4">
+                    <div class="position-absolute pe-1" id="contenedor-btn-HardSoft" style="right: 0;" *ngIf="isLoggedIn()">
+                        <i (click)="traerHabilidadDura(habilidad.id)" class="bi bi-pencil-fill rounded-circle text-center pt-1" type="button" data-bs-toggle="modal"
+                            data-bs-target="#editar-Habilidad-Dura" id="editar-HardSoft"></i>
+                        <i (click)="eliminarHabilidadDura(habilidad.id)" class="bi bi-trash3-fill rounded-circle text-center pt-1" type="button" id="editar-HardSoft"></i>
+                    </div>
+                    <circle-progress class="img-fluid" [percent]="habilidad.porcentaje" titleFontSize=50 unitsFontSize=30 titleColor="white"
+                        unitsColor="white" [showSubtitle]="false" [radius]="100" [outerStrokeWidth]="12"
+                        [innerStrokeWidth]="5" [space]=10 [outerStrokeGradient]="true"
+                        [outerStrokeGradientStopColor]="'#cc0f7d'" [outerStrokeColor]="'#e189b8'"
+                        [innerStrokeColor]="'#bcb8ba'" [animation]="true" [animationDuration]="700">
+                    </circle-progress>
+                    <h4>{{habilidad.nombre}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-agregar-hab-dura></app-agregar-hab-dura>
+<app-editar-hab-duras></app-editar-hab-duras>
+

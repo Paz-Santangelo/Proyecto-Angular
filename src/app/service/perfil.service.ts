@@ -24,7 +24,7 @@ export class PerfilService {
     return this.httpClient.get<perfil[]>(this.URL);
   }
 
-  getProfile(id:string) {
+  getProfile(id:number) {
     const urlPerfil = this.URL + `/${id}`;
     return this.httpClient.get<perfil>(urlPerfil);
   }

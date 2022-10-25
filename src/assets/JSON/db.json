@@ -4,7 +4,7 @@
       "id": "admin",
       "imgPerfil": "./assets/foto-perfil.jpg",
       "nombreCompleto": "Maria Paz Santangelo",
-      "titulo": "Developer Full Stack Junior",
+      "titulo": "Full Stack Developer Junior",
       "acerca": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero labore quidem ea tempora vitae rem laboriosam nemo repellendus ab ad, quisquam deleniti quos voluptatem, sunt facilis porro. Et, eveniet voluptatem!"
     }
   ],
@@ -15,13 +15,6 @@
       "anio": "Año inicio - Año fin",
       "descripcionTrabajo": "Lorem ipsum bla bla",
       "id": 1
-    },
-    {
-      "imgExperiencia": "",
-      "puesto": "Trabajo 3",
-      "anio": "Año inicio - Año fin",
-      "descripcionTrabajo": "Lorem ipsum bla bla bla blaaaaa",
-      "id": 2
     }
   ],
   "educacion": [
@@ -43,18 +36,60 @@
   "hardSoft": [
     {
       "id": 1,
-      "porcentaje": 80,
+      "porcentaje": 90,
+      "nombre": "Trabajo en equipo"
+    },
+    {
+      "id": 2,
+      "porcentaje": 90,
+      "nombre": "Comunicación asertiva"
+    },
+    {
+      "porcentaje": 85,
+      "nombre": "Capacidad analítica y resolución de problemas",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "porcentaje": 100,
+      "nombre": "Atención al detalle"
+    },
+    {
+      "id": 5,
+      "porcentaje": 100,
+      "nombre": "Deseos de aprender y estar actualizado"
+    },
+    {
+      "id": 6,
+      "porcentaje": 95,
+      "nombre": "Adaptabilidad - Priorización - Manejo de tareas múltiples"
+    },
+    {
+      "id": 7,
+      "porcentaje": 100,
+      "nombre": "Ética - Compromiso - Honestidad"
+    }
+  ],
+  "hardsSkill": [
+    {
+      "id": 1,
+      "porcentaje": 90,
       "nombre": "HTML"
     },
     {
       "id": 2,
-      "porcentaje": 70,
+      "porcentaje": 90,
       "nombre": "CSS"
     },
     {
-      "porcentaje": "75",
-      "nombre": "JavaScript",
+      "porcentaje": 85,
+      "nombre": "Angular",
       "id": 3
+    },
+    {
+      "porcentaje": "80",
+      "nombre": "GitHub",
+      "id": 4
     }
   ],
   "proyectos": [
@@ -62,19 +97,22 @@
       "id": 1,
       "imgProyecto": "./assets/proyecto.png",
       "nombreProyecto": "Proyecto 1",
-      "descripcionProyecto": "Descripción Proyecto 1"
+      "descripcionProyecto": "Descripción Proyecto 1",
+      "link": "https://github.com/Paz-Santangelo/Desafio-modulo2-Arg.Prog.git"
     },
     {
       "id": 2,
       "imgProyecto": "./assets/proyecto.png",
       "nombreProyecto": "Proyecto 2",
-      "descripcionProyecto": "Descripción Proyecto 2"
+      "descripcionProyecto": "Descripción Proyecto 2",
+      "link": "https://github.com/Paz-Santangelo/Desafio-modulo2-Arg.Prog.git"
     },
     {
       "id": 3,
       "imgProyecto": "./assets/proyecto.png",
       "nombreProyecto": "Proyecto 3",
-      "descripcionProyecto": "Descripción Proyecto 3"
+      "descripcionProyecto": "Descripción Proyecto 3",
+      "link": "https://github.com/Paz-Santangelo/Desafio-modulo2-Arg.Prog.git"
     }
   ],
   "admin": [

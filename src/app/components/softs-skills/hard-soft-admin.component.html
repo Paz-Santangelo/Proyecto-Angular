@@ -1,6 +1,6 @@
-<section class="row d-flex justify-content-center text-white text-center mt-5">
+<section class="row d-flex justify-content-center text-white text-center mt-4">
     <div class="col-12 mt-4">
-        <h1 id="soft-skills">Hard & Soft Skills</h1>
+        <h2 id="soft-skills">Softs Skills</h2>
         <div class="d-flex justify-content-end">
             <div class="circle-add-card p-1" type="button" data-bs-toggle="modal" data-bs-target="#modal-agregar-HS" *ngIf="isLoggedIn()">
                 <img class="img-fluid" src="../../../assets/icons8-agregar-propiedad-48.png" alt="">
@@ -9,7 +9,7 @@
     </div>
 
     <div class="container d-flex justify-content-center">
-        <div class="contenedor-secundario row mt-2">
+        <div class="contenedor-secundario row mt-1">
             <div *ngFor="let habilidad of habilidades" class="col-12 col-md-6 col-lg-4 g-5 d-flex justify-content-center">
                 <div class="card rounded-4 p-4">
                     <div class="position-absolute pe-1" id="contenedor-btn-HardSoft" style="right: 0;" *ngIf="isLoggedIn()">
@@ -28,9 +28,6 @@
             </div>
         </div>
     </div>
-
-
-    
 </section>
 <app-agregar-hy-s></app-agregar-hy-s>
 <app-editar-hys></app-editar-hys>

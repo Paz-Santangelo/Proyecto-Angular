@@ -1,0 +1,70 @@
+.circle-add-card{
+    background: rgb(128, 66, 104);
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    margin-top: -60px;
+}
+
+.container{
+    width: 90%;
+}
+
+.contenedor-secundario{
+    width: 100%;
+}
+
+#contenedor-btn-HardSoft{
+    margin-top: -44px;
+}
+
+.card{
+    background-color: rgba(255, 255, 255, 0.055); 
+    backdrop-filter: blur(10px) saturate(90%) brightness(120%);
+    width: 90%;
+    border: none;
+}
+
+#editar-HardSoft{
+    font-size: 22px;
+    width: 42px; 
+    height: 42px;
+    margin-right: 10px;
+    background: rgb(128, 66, 104);
+    padding-top: 1px;
+}
+
+#editar-HardSoft:hover{
+    transform: scale(1.05);
+    transition: 0.5s;
+    box-shadow: 0 0 15px #a97cc7;
+}
+
+
+@media(max-width: 768px){
+
+    .contenedor-secundario{
+        width: 80%;
+    }
+
+    .card{
+        width: 70%;
+    }
+    
+    .circle-add-card{
+        width: 45px;
+        height: 45px;
+        margin-top: -50px;
+    }
+
+    #editar-HardSoft{
+        font-size: 18px;
+        width: 38px; 
+        height: 38px;
+        margin-right: 10px;
+    }
+
+    h4{
+        font-size: 15px;
+    }
+}

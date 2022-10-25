@@ -16,7 +16,7 @@ export class EditarHysComponent implements OnInit {
   editarHabilidad(){
     this.skillService.updateSkill(this.skillService.habilidadModal).subscribe(data => {
       this.skillService.habilidadModal = data;
-      alert("Educación modificada");
+      alert("Habilidad blanda modificada");
       window.location.reload();
     })
   }

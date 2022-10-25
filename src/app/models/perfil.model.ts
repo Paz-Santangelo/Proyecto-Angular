@@ -1,5 +1,5 @@
 export class perfil{
-    id?:string;
+    id?:number;
     imgPerfil: string;
     nombreCompleto: string;
     titulo:string;

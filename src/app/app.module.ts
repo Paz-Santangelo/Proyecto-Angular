@@ -22,13 +22,17 @@ import { EditarEducacionComponent } from './modales/editar-educacion/editar-educ
 import { ProyectosAdminComponent } from './components/proyectos-admin/proyectos-admin.component';
 import { AgregarProyectoComponent } from './modales/agregar-proyecto/agregar-proyecto.component';
 import { EditarProyectoComponent } from './modales/editar-proyecto/editar-proyecto.component';
-import { HardSoftAdminComponent } from './components/hard-soft-admin/hard-soft-admin.component';
+import { HardSoftAdminComponent } from './components/softs-skills/hard-soft-admin.component';
 import { AgregarHySComponent } from './modales/agregar-hy-s/agregar-hy-s.component';
 import { EditarHysComponent } from './modales/editar-hys/editar-hys.component';
 import { ScrollspyComponent } from './components/scrollspy/scrollspy.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { HardsSkillsComponent } from './components/hards-skills/hards-skills.component';
+import { EditarHabDurasComponent } from './modales/editar-hab-duras/editar-hab-duras.component';
+import { AgregarHabDuraComponent } from './modales/agregar-hab-dura/agregar-hab-dura.component';
 
 
 @NgModule({
@@ -54,7 +58,11 @@ import { FooterComponent } from './components/footer/footer.component';
     ScrollspyComponent,
     HomeComponent,
     AdminComponent,
-    FooterComponent
+    FooterComponent,
+    SkillsComponent,
+    HardsSkillsComponent,
+    EditarHabDurasComponent,
+    AgregarHabDuraComponent
   ],
   imports: [
     BrowserModule,

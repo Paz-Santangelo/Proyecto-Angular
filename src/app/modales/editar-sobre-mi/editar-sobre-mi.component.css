@@ -60,3 +60,30 @@
     transform: scale(1.05);
     transition: 0.5s;
 }
+
+@media(max-width: 768px){
+    .modal-content{
+        margin: 25px;
+    }
+    
+    .modal-title{
+        font-size: 23px;
+    }
+
+    .btn-close{
+        font-size: 10px;
+    }
+
+    .modal-body{
+        font-size: 20px;
+    }
+
+    .form-control{
+        font-size: 15px;
+    }
+
+    .btn{
+        font-size: 15px;
+        width: 40%;
+    }
+}

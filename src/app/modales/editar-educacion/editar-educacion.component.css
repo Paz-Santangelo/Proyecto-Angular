@@ -1,19 +1,16 @@
 #modal-educacion{
     background-color: rgba(78, 18, 38, 0.164);
     backdrop-filter: blur(12px) saturate(90%) brightness(120%);
-}
-
-.modal{
     --bs-modal-width: 600px;
     --bs-modal-padding: 1rem;
-} 
+}
 
 .modal-header{
     border:none;
 } 
 
 .btn-close{
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .btn-close:focus{
@@ -28,15 +25,15 @@
 }
 
 .modal-title{
-    font-size: 30px;
+    font-size: 28px;
 }
 
 .modal-body{
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .form-control{
-    font-size: 23px;
+    font-size: 18px;
 }
 
 .modal-footer{
@@ -59,4 +56,29 @@
     color: white;
     transform: scale(1.05);
     transition: 0.5s;
+}
+
+@media(max-width: 768px){
+    .modal-content{
+        margin: 35px;
+    }
+
+    .modal-title{
+        font-size: 25px;
+    }
+
+    /*aca va lo del boton close*/
+    .btn-close{
+        font-size: 10px;
+        margin-top: -10px;
+    }
+    
+    .form-control{
+        font-size: 18px;
+    }
+
+    .btn{
+        font-size: 15px;
+        width: 40%;
+    }
 }

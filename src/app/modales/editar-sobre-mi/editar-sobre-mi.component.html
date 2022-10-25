@@ -10,24 +10,24 @@
         <div class="modal-body">
           <div class="container">
             <form (ngSubmit)="editarPerfil()" #form="ngForm">
-              <div class="form-group m-3">
+              <div class="form-group m-2">
                 <label for="imgPerfil">Foto de Perfil</label>
                 <input type="file" class="form-control text-center" id="imgPerfil" name="imgPerfil" [(ngModel)]="perfilService.perfilModal.imgPerfil">
               </div>
-              <div class="form-group m-3">
+              <div class="form-group m-2">
                 <label for="nombreCompleto">Nombre Completo</label>
                 <input type="text" class="form-control text-center" id="nombreCompleto" name="nombreCompleto" [(ngModel)]="perfilService.perfilModal.nombreCompleto">
               </div>
-              <div class="form-group m-3">
+              <div class="form-group m-2">
                 <label for="titulo">Título</label>
                 <input type="text" class="form-control text-center" id="titulo" name="titulo" [(ngModel)]="perfilService.perfilModal.titulo">
               </div>
-              <div class="form-group m-3">
+              <div class="form-group m-2">
                 <label for="acerca">Acerca de mí</label>
                 <textarea rows="5" type="text" class="form-control text-center" id="acerca" name="acerca" [(ngModel)]="perfilService.perfilModal.acerca"></textarea>
               </div>
               <div class="modal-footer">
-                <button type="button" data-bs-dismiss="modal" class="btn btn-primary">Aceptar</button>
+                <button type="submit" data-bs-dismiss="modal" class="btn btn-primary">Aceptar</button>
               </div>
             </form>
           </div>

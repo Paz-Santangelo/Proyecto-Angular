@@ -12,6 +12,7 @@ export class AgregarProyectoComponent implements OnInit {
   imgProyecto: string;
   nombreProyecto: string;
   descripcionProyecto: string;
+  linkProyecto: string;
 
   constructor(private proyectosService: ProyectosService) { }
 
@@ -19,7 +20,7 @@ export class AgregarProyectoComponent implements OnInit {
   }
 
   crearNuevoProyecto(): void {
-    const nuevoProyecto = new Proyecto(this.imgProyecto, this.nombreProyecto, this.descripcionProyecto);
+    const nuevoProyecto = new Proyecto(this.imgProyecto, this.nombreProyecto, this.descripcionProyecto, this.linkProyecto);
     this.proyectosService.newProject(nuevoProyecto).subscribe(data => {
       alert("Nuevo proyecto agregado");
       window.location.reload();
