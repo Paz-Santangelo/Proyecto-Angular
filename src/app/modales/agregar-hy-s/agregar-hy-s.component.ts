@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Hys } from 'src/app/models/hys';
 import { HySService } from 'src/app/service/HyS.service';
 
@@ -9,17 +10,28 @@ import { HySService } from 'src/app/service/HyS.service';
 })
 export class AgregarHySComponent implements OnInit {
 
-  porcentaje: number;
-  nombre: string;
+  softSkillForm: FormGroup;
 
-  constructor(private skillsService: HySService) { }
+  constructor(private skillsService: HySService, private formBuilder: FormBuilder) {
+    this.softSkillForm = this.formBuilder.group ({
+      porcentaje: ['', [Validators.required]],
+      nombre: ['', [Validators.required]]
+    })
+   }
 
   ngOnInit(): void {
   }
 
+  get porcentaje(){
+    return this.softSkillForm.get("porcentaje");
+  }
+
+  get nombre() {
+    return this.softSkillForm.get("nombre");
+  }
+
   crearNewSkill():void{
-    const nuevaHabilidad = new Hys(this.porcentaje, this.nombre);
-    this.skillsService.newSkill(nuevaHabilidad).subscribe(data => {
+    this.skillsService.newSkill(this.softSkillForm.value).subscribe(data => {
       alert("Nueva habilidad agregada");
       window.location.reload();
     });

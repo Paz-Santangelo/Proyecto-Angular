@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Proyecto } from 'src/app/models/proyecto';
 import { ProyectosService } from 'src/app/service/proyectos.service';
 
@@ -9,19 +10,38 @@ import { ProyectosService } from 'src/app/service/proyectos.service';
 })
 export class AgregarProyectoComponent implements OnInit {
 
-  imgProyecto: string;
-  nombreProyecto: string;
-  descripcionProyecto: string;
-  linkProyecto: string;
+  proyectoForm: FormGroup;
 
-  constructor(private proyectosService: ProyectosService) { }
+  constructor(private proyectosService: ProyectosService, private formBuilder: FormBuilder) {
+    this.proyectoForm = this.formBuilder.group({
+      imgProyecto: ['', [Validators.required]],
+      nombreProyecto: ['', [Validators.required]],
+      descripcionProyecto: ['', [Validators.required]],
+      linkProyecto: ['', [Validators.required]]
+    })
+   }
 
   ngOnInit(): void { 
   }
 
+  get imgProyecto(){
+    return this.proyectoForm.get("imgProyecto");
+  }
+
+  get nombreProyecto() {
+    return this.proyectoForm.get("nombreProyecto");
+  }
+
+  get descripcionProyecto() {
+    return this.proyectoForm.get("descripcionProyecto");
+  }
+
+  get linkProyecto() {
+    return this.proyectoForm.get("linkProyecto");
+  }
+
   crearNuevoProyecto(): void {
-    const nuevoProyecto = new Proyecto(this.imgProyecto, this.nombreProyecto, this.descripcionProyecto, this.linkProyecto);
-    this.proyectosService.newProject(nuevoProyecto).subscribe(data => {
+    this.proyectosService.newProject(this.proyectoForm.value).subscribe(data => {
       alert("Nuevo proyecto agregado");
       window.location.reload();
     })

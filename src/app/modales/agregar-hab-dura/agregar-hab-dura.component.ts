@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HardSkill } from 'src/app/models/hardSkill';
 import { HardsSkillsService } from 'src/app/service/HardsSkills.service';
 
@@ -9,17 +10,28 @@ import { HardsSkillsService } from 'src/app/service/HardsSkills.service';
 })
 export class AgregarHabDuraComponent implements OnInit {
 
-  porcentaje: number;
-  nombre: string;
+  hardSkillForm : FormGroup;
 
-  constructor(private hardsService: HardsSkillsService) { }
+  constructor(private hardsService: HardsSkillsService, private formBuilder: FormBuilder) {
+    this.hardSkillForm = this.formBuilder.group({
+      porcentaje: ['', [Validators.required]],
+      nombre: ['', [Validators.required]]
+    })
+   }
 
   ngOnInit(): void {
   }
 
+  get porcentaje() {
+    return this.hardSkillForm.get("porcentaje");
+  }
+
+  get nombre() {
+    return this.hardSkillForm.get("nombre");
+  }
+
   crearHabilidadDura():void{
-    const nuevaHabilidadDura = new HardSkill(this.porcentaje, this.nombre);
-    this.hardsService.newHardSkill(nuevaHabilidadDura).subscribe(data => {
+    this.hardsService.newHardSkill(this.hardSkillForm.value).subscribe(data => {
       alert("Nueva habilidad dura agregada");
       window.location.reload();
     })

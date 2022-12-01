@@ -7,25 +7,45 @@
           aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form (ngSubmit)="crearExp()" novalidate #form="ngForm">
+        <form [formGroup]="experienciaForm" (ngSubmit)="crearExp()" novalidate #form="ngForm">
           <div class="form-group m-3">
-            <label for="imgagenExp">Logo de la empresa</label>
-            <input type="file" class="form-control" id="imgagenExp" name="imgExp" [(ngModel)]="imgExperiencia">
+            <label for="imagenExp">Logo de la empresa</label>
+            <input type="file" class="form-control" id="imagenExp" name="imgExp" formControlName="imgExperiencia">
+          </div>
+          <div *ngIf="imgExp?.errors && imgExp?.touched">
+            <div *ngIf="imgExp?.hasError('required')" class="alert alert-danger" role="alert">
+              Debe ingresar la imagen de la Institución.
+            </div>
           </div>
           <div class="form-group m-3">
             <label for="puestoTrabajo">Título del Puesto</label>
-            <input type="text" class="form-control" id="puestoTrabajo" name="puesto" [(ngModel)]="puesto">
+            <input type="text" class="form-control" id="puestoTrabajo" name="puesto" formControlName="puesto">
+          </div>
+          <div *ngIf="puestoExp?.errors && puestoExp?.touched">
+            <div *ngIf="puestoExp?.hasError('required')" class="alert alert-danger" role="alert">
+              Debe ingresar el nombre del puesto.
+            </div>
           </div>
           <div class="form-group m-3">
             <label for="anioTrabajo">Año inicio - Año fin</label>
-            <input type="text" class="form-control" id="anioTrabajo" name="anio" [(ngModel)]="anio">
+            <input type="text" class="form-control" id="anioTrabajo" name="anio" formControlName="anio">
+          </div>
+          <div *ngIf="anioExp?.errors && anioExp?.touched">
+            <div *ngIf="anioExp?.hasError('required')" class="alert alert-danger" role="alert">
+              Debe ingresar el año del puesto.
+            </div>
           </div>
           <div class="form-group m-3">
             <label for="descripcion">Descripción del puesto</label>
-            <textarea rows="5" type="text" class="form-control" id="descripcion" name="descripcionTrabajo" [(ngModel)]="descripcionTrabajo"></textarea>
+            <textarea rows="5" type="text" class="form-control" id="descripcion" name="descripcionTrabajo" formControlName="descripcionTrabajo"></textarea>
+          </div>
+          <div *ngIf="descripcionExp?.errors && descripcionExp?.touched">
+            <div *ngIf="descripcionExp?.hasError('required')" class="alert alert-danger" role="alert">
+              Debe agregar la descripción del puesto.
+            </div>
           </div>
           <div class="modal-footer">
-            <button type="submit" data-bs-dismiss="modal" class="btn btn-primary">Aceptar</button>
+            <button type="submit" [disabled]="imgExp?.hasError('required') || puestoExp?.hasError('required') || anioExp?.hasError('required') || descripcionExp?.hasError('required')" data-bs-dismiss="modal" class="btn btn-primary">Aceptar</button>
           </div>
         </form>
       </div>

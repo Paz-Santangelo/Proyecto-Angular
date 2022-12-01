@@ -90,6 +90,11 @@
       "porcentaje": "80",
       "nombre": "GitHub",
       "id": 4
+    },
+    {
+      "porcentaje": 60,
+      "nombre": "JAVA",
+      "id": 5
     }
   ],
   "proyectos": [

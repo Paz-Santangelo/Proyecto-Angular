@@ -8,14 +8,24 @@
       </div>
 
       <div class="modal-body d-flex justify-content-center">
-        <form (submit)="crearNewSkill()" class="w-100">
+        <form [formGroup]="softSkillForm" (submit)="crearNewSkill()" class="w-100">
           <div class="form-group m-3">
             <label>Porcentaje</label>
-            <input type="text" class="form-control text-center" name="porcentaje" id="input-porcentaje" [(ngModel)]="porcentaje">
+            <input type="number" class="form-control text-center" name="porcentaje" id="input-porcentaje" formControlName="porcentaje">
+          </div>
+          <div *ngIf="porcentaje?.errors && porcentaje?.touched">
+            <div *ngIf="porcentaje?.hasError('required')" class="alert alert-danger" role="alert">
+              Debe ingresar el porcentaje de la habilidad.
+            </div>
           </div>
           <div class="form-group m-3">
             <label>Nombre</label>
-            <input type="text" class="form-control text-center" name="nombre" [(ngModel)]="nombre">
+            <input type="text" class="form-control text-center" name="nombre" formControlName="nombre">
+          </div>
+          <div *ngIf="nombre?.errors && nombre?.touched">
+            <div *ngIf="nombre?.hasError('required')" class="alert alert-danger" role="alert">
+              Debe ingresar el porcentaje de la habilidad.
+            </div>
           </div>
           <div class="modal-footer">
             <button type="submit" data-bs-dismiss="modal" class="btn btn-primary">Aceptar</button>
