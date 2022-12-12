@@ -18,6 +18,8 @@ export class EditarEducacionComponent implements OnInit {
       this.educacionService.educacionModal = data;
       alert("Educación modificada");
       window.location.reload();
+    }, err => {
+      alert("Se ha producido un error, intente nuevamente");
     });
   }
 }

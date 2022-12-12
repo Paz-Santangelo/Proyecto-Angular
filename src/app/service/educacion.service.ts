@@ -7,7 +7,8 @@ import { Educacion } from '../models/educacion';
   providedIn: 'root'
 })
 export class EducacionService {
-  urlEdu = 'http://localhost:3000/educacion';
+  //urlEdu = 'http://localhost:3000/educacion';
+  urlEdu2 = 'http://localhost:8080/educacion/'
 
   constructor(private httpClient: HttpClient) { }
 
@@ -20,24 +21,24 @@ export class EducacionService {
   }
 
   getAllEducaciones():Observable<Educacion[]>{
-    return this.httpClient.get<Educacion[]>(this.urlEdu);
+    return this.httpClient.get<Educacion[]>(this.urlEdu2 + 'list');
   }
 
   getEducation(id:number){
-    return this.httpClient.get<Educacion>(this.urlEdu + `/${id}`);
+    return this.httpClient.get<Educacion>(this.urlEdu2 + `getOne/${id}`);
   }
 
   newEducation(educacion:Educacion):Observable<Educacion>{
-    return this.httpClient.post<Educacion>(this.urlEdu, educacion);
+    return this.httpClient.post<Educacion>(this.urlEdu2 + 'new', educacion);
   }
 
   updateEducation(educacion:Educacion):Observable<any>{
-    const urlEdId = `${this.urlEdu}/${educacion.id}`;
+    const urlEdId = this.urlEdu2 + `edit/${educacion.id}`;
     return this.httpClient.put<any>(urlEdId, educacion);
   }
 
   deleteEducation(id:number):Observable<any>{
-    const urlEdId = `${this.urlEdu}/${id}`;
+    const urlEdId = this.urlEdu2 + `delete/${id}`;
     return this.httpClient.delete<any>(urlEdId);
   }
 

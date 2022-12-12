@@ -8,7 +8,8 @@ import { perfil } from '../models/perfil.model';
 })
 export class PerfilService {
 
-  URL = 'http://localhost:3000/perfil';
+  //URL = 'http://localhost:3000/perfil';
+  URL2 = 'http://localhost:8080/perfil/';
 
   perfilModal: perfil = {
     id:null,
@@ -21,16 +22,16 @@ export class PerfilService {
   constructor(private httpClient: HttpClient) { }
 
   getAllPerfil():Observable<perfil[]>{
-    return this.httpClient.get<perfil[]>(this.URL);
+    return this.httpClient.get<perfil[]>(this.URL2 + 'details');
   }
 
   getProfile(id:number) {
-    const urlPerfil = this.URL + `/${id}`;
+    const urlPerfil = this.URL2 + `details/${id}`;
     return this.httpClient.get<perfil>(urlPerfil);
   }
 
   updateProfile(perfil: perfil):Observable<any>{
-    const urlPerfil = this.URL + `/${perfil.id}`;
+    const urlPerfil = this.URL2 + `edit/${perfil.id}`;
     return this.httpClient.put<any>(urlPerfil, perfil);
   }
 }

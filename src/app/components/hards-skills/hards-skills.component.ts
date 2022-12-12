@@ -3,6 +3,7 @@ import { HardSkill } from 'src/app/models/hardSkill';
 import { Hys } from 'src/app/models/hys';
 import { AuthService } from 'src/app/service/auth.service';
 import { HardsSkillsService } from 'src/app/service/HardsSkills.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-hards-skills',
@@ -12,12 +13,18 @@ import { HardsSkillsService } from 'src/app/service/HardsSkills.service';
 export class HardsSkillsComponent implements OnInit {
 
   habilidadesDuras: HardSkill[] = []; 
+  isLogged: boolean = false;
 
-  constructor(private hardsService: HardsSkillsService, private authService: AuthService) { }
+  constructor(private hardsService: HardsSkillsService, private tokenService: TokenService) { }
 
   ngOnInit(): void {
     this.hardsService.getAllHS().subscribe(data => this.habilidadesDuras = data);
 
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
   }
 
   traerHabilidadDura(id: number) {
@@ -32,11 +39,9 @@ export class HardsSkillsComponent implements OnInit {
       this.hardsService.modalHards = data;
       alert("Tarjeta de habilidad dura eliminada");
       window.location.reload();
-    })
-  }
-
-  isLoggedIn(){
-    return this.authService.isLoggedIn();
+    }, err => {
+      alert("Se ha producido un error, intente nuevamente");
+    });
   }
 
 }

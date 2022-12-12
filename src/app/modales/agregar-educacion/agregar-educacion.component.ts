@@ -44,7 +44,9 @@ export class AgregarEducacionComponent implements OnInit {
     this.educacionService.newEducation(this.educacionForm.value).subscribe(data => {
       alert("Nuevo Curso agregado");
       window.location.reload();
-    })
+    }, err => {
+      alert("Se ha producido un error, intente nuevamente");
+    });
   }
 
 }

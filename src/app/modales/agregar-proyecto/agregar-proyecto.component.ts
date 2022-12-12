@@ -44,7 +44,9 @@ export class AgregarProyectoComponent implements OnInit {
     this.proyectosService.newProject(this.proyectoForm.value).subscribe(data => {
       alert("Nuevo proyecto agregado");
       window.location.reload();
-    })
+    }, err => {
+      alert("Se ha producido un error, intente nuevamente");
+    });
   }
 
 }

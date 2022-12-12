@@ -2,7 +2,7 @@
     <div class="col-12 mt-4">
         <h2 id="soft-skills">Hards Skills</h2>
         <div class="d-flex justify-content-end">
-            <div class="circle-add-card p-1" type="button" data-bs-toggle="modal" data-bs-target="#modal-agregar-HabDura" *ngIf="isLoggedIn()">
+            <div class="circle-add-card p-1" type="button" data-bs-toggle="modal" data-bs-target="#modal-agregar-HabDura" *ngIf="isLogged">
                 <img class="img-fluid" src="../../../assets/icons8-agregar-propiedad-48.png" alt="">
             </div>
         </div>
@@ -12,7 +12,7 @@
         <div class="contenedor-secundario row mt-1">
             <div *ngFor="let habilidad of habilidadesDuras" class="col-12 col-md-6 col-lg-4 g-5 d-flex justify-content-center">
                 <div class="card rounded-4 p-4">
-                    <div class="position-absolute pe-1" id="contenedor-btn-HardSoft" style="right: 0;" *ngIf="isLoggedIn()">
+                    <div class="position-absolute pe-1" id="contenedor-btn-HardSoft" style="right: 0;" *ngIf="isLogged">
                         <i (click)="traerHabilidadDura(habilidad.id)" class="bi bi-pencil-fill rounded-circle text-center pt-1" type="button" data-bs-toggle="modal"
                             data-bs-target="#editar-Habilidad-Dura" id="editar-HardSoft"></i>
                         <i (click)="eliminarHabilidadDura(habilidad.id)" class="bi bi-trash3-fill rounded-circle text-center pt-1" type="button" id="editar-HardSoft"></i>

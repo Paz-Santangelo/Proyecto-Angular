@@ -18,6 +18,8 @@ export class EditarHabDurasComponent implements OnInit {
       this.hardsService.modalHards = data;
       alert("Habilidad dura modificada");
       window.location.reload();
-    })
+    }, err => {
+      alert("Se ha producido un error, intente nuevamente");
+    });
   }
 }

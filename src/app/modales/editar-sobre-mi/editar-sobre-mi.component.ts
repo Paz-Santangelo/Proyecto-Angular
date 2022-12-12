@@ -18,7 +18,9 @@ export class EditarSobreMiComponent implements OnInit {
       this.perfilService.perfilModal = data;
       alert("Perfil modificado exitosamente");
       window.location.reload();
-    })
+    }, err => {
+      alert("Se ha producido un error, intente nuevamente");
+    });
   }
 
 }

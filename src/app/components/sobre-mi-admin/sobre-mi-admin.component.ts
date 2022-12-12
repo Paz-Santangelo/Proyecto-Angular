@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { perfil } from 'src/app/models/perfil.model';
 import { AuthService } from 'src/app/service/auth.service';
 import { PerfilService } from 'src/app/service/perfil.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-sobre-mi-admin',
@@ -12,12 +13,19 @@ export class SobreMiAdminComponent implements OnInit {
 
   perfil: perfil[] = [];
 
-  constructor(public perfilService: PerfilService, private authService: AuthService) { }
+  constructor(public perfilService: PerfilService, private tokenService: TokenService) { }
+
+  isLogged: boolean = false;
 
   ngOnInit(): void {
     this.perfilService.getAllPerfil().subscribe(data => {this.perfil = data});
 
-    this.isLoggedIn();
+    if(this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+
   }
 
   traerPerfil(id:number){
@@ -25,9 +33,4 @@ export class SobreMiAdminComponent implements OnInit {
       this.perfilService.perfilModal = data;
     });
   }
-
-  isLoggedIn(){
-    return this.authService.isLoggedIn();
-  }
-
 }

@@ -33,6 +33,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { HardsSkillsComponent } from './components/hards-skills/hards-skills.component';
 import { EditarHabDurasComponent } from './modales/editar-hab-duras/editar-hab-duras.component';
 import { AgregarHabDuraComponent } from './modales/agregar-hab-dura/agregar-hab-dura.component';
+import { interceptorProvider } from './service/interceptor.service';
 
 
 @NgModule({
@@ -72,7 +73,7 @@ import { AgregarHabDuraComponent } from './modales/agregar-hab-dura/agregar-hab-
     NgCircleProgressModule.forRoot({}),
     HttpClientModule
   ],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

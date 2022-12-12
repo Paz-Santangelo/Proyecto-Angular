@@ -34,6 +34,8 @@ export class AgregarHySComponent implements OnInit {
     this.skillsService.newSkill(this.softSkillForm.value).subscribe(data => {
       alert("Nueva habilidad agregada");
       window.location.reload();
+    }, err => {
+      alert("Se ha producido un error, intente nuevamente");
     });
   }
 

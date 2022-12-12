@@ -7,7 +7,8 @@ import { Hys } from '../models/hys';
   providedIn: 'root'
 })
 export class HySService {
-  urlHabilidades = 'http://localhost:3000/hardSoft';
+  //urlHabilidades = 'http://localhost:3000/hardSoft';
+  urlSoftSkill = 'http://localhost:8080/soft_skills/';
 
   habilidadModal: Hys = {
     porcentaje: '',
@@ -17,24 +18,24 @@ export class HySService {
   constructor(private httpClient: HttpClient) { }
 
   getAllSkills():Observable<Hys[]> {
-    return this.httpClient.get<Hys[]>(this.urlHabilidades);
+    return this.httpClient.get<Hys[]>(this.urlSoftSkill + 'list');
   }
 
   getSkill(id:number) {
-    return this.httpClient.get<Hys>(this.urlHabilidades + `/${id}`);
+    return this.httpClient.get<Hys>(this.urlSoftSkill + `getOne/${id}`);
   }
 
   newSkill(skill: Hys):Observable<Hys>{
-    return this.httpClient.post<Hys>(this.urlHabilidades, skill);
+    return this.httpClient.post<Hys>(this.urlSoftSkill + 'new', skill);
   }
 
   updateSkill(skill: Hys):Observable<any>{
-    const urlSkillID = this.urlHabilidades + `/${skill.id}`;
+    const urlSkillID = this.urlSoftSkill + `edit/${skill.id}`;
     return this.httpClient.put<any>(urlSkillID, skill);
   }
 
   deleteSkill(id:number):Observable<any>{
-    const urlSkillID = this.urlHabilidades + `/${id}`;
+    const urlSkillID = this.urlSoftSkill + `delete/${id}`;
     return this.httpClient.delete<any>(urlSkillID);
   }
 

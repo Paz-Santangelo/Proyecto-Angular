@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Proyecto } from 'src/app/models/proyecto';
 import { AuthService } from 'src/app/service/auth.service';
 import { ProyectosService } from 'src/app/service/proyectos.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-proyectos-admin',
@@ -11,13 +12,18 @@ import { ProyectosService } from 'src/app/service/proyectos.service';
 export class ProyectosAdminComponent implements OnInit {
 
   proyectos: Proyecto[] = [];
+  isLogged: boolean = false;
 
-  constructor(private proyectosService: ProyectosService, private authService: AuthService) { }
+  constructor(private proyectosService: ProyectosService, private tokenService: TokenService) { }
 
   ngOnInit(): void {
     this.proyectosService.getAllProjects().subscribe(data => this.proyectos = data);
 
-    this.isLoggedIn();
+    if(this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
   }
 
   traerProyecto(id:number){
@@ -31,10 +37,9 @@ export class ProyectosAdminComponent implements OnInit {
       this.proyectosService.proyectoModal = data;
       alert("Proyecto eliminado");
       window.location.reload();
-    })
+    }, err => {
+      alert("Se ha producido un error, intente nuevamente");
+    });
   }
 
-  isLoggedIn(){
-    return this.authService.isLoggedIn();
-  }
 }

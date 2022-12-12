@@ -18,6 +18,8 @@ export class EditarHysComponent implements OnInit {
       this.skillService.habilidadModal = data;
       alert("Habilidad blanda modificada");
       window.location.reload();
-    })
+    }, err => {
+      alert("Se ha producido un error, intente nuevamente");
+    });
   }
 }

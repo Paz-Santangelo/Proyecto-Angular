@@ -22,6 +22,8 @@ export class EditarExpComponent implements OnInit {
       this.experienciaService.experienciaModal = datos;
       alert("Experiencia modificada exitosamente");
       window.location.reload();
+    }, err => {
+      alert("Se ha producido un error, intente nuevamente");
     });
   }
 

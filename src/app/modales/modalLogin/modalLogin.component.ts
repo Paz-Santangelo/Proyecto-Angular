@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Login } from 'src/app/models/Login';
 import { AuthService } from 'src/app/service/auth.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-modalLogin',
@@ -9,29 +11,58 @@ import { AuthService } from 'src/app/service/auth.service';
 })
 export class ModalLoginComponent implements OnInit {
 
+  isLogged = false;
+  notLogged = false;
+  loginUsuario: Login;
+  roles: string[] = [];
+  errorMsj: string;
+
   loginForm: FormGroup;
 
-  constructor(private authService: AuthService, private formBuilder: FormBuilder) { 
+  constructor(private authService: AuthService, private tokenService: TokenService, private formBuilder: FormBuilder) {
     this.loginForm = this.formBuilder.group({
-      email:['', [Validators.email, Validators.required]],
-      password:['', [Validators.required]]
+      nombreUsuario: ['', [Validators.required]],
+      password: ['', [Validators.required]]
     })
-   }
+  }
 
   ngOnInit() {
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+      this.notLogged = false;
+      this.roles = this.tokenService.getAuthorities();
+    }
   }
 
-  get Mail(){
-    return this.loginForm.get("email");
+  get Usuario() {
+    return this.loginForm.get("nombreUsuario");
   }
-  
-  get Password(){
+
+  get Password() {
     return this.loginForm.get("password");
   }
 
   onLogin() {
-    console.log(this.loginForm.value);
-    this.authService.login(this.loginForm.value);
+    this.authService.login(this.loginForm.value).subscribe(data => {
+      this.isLogged = true;
+      this.notLogged = false;
+      this.tokenService.setToken(data.token);
+      this.tokenService.setUsername(data.nombreUsuario);
+      this.tokenService.setAuthorities(data.authorities);
+      this.roles = data.authorities;
+      window.location.reload();
+    }, err => {
+      this.isLogged = false;
+      this.notLogged = true;
+      this.errorMsj = err.error.mensaje;
+      alert("Usuario o Contraseña incorrectos");
+      }
+    )
   }
+
+  /*
+  console.log(this.loginForm.value);
+  this.authService.login(this.loginForm.value);
+  */
 
 }

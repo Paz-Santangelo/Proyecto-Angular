@@ -9,7 +9,8 @@ import { HardSkill } from '../models/hardSkill';
 })
 export class HardsSkillsService {
 
-  urlHardsSkills = 'http://localhost:3000/hardsSkill';
+  //urlHardsSkills = 'http://localhost:3000/hardsSkill';
+  urlHardsSkills2 = 'http://localhost:8080/hards_skills/';
 
   modalHards: HardSkill = {
     porcentaje: '',
@@ -19,24 +20,24 @@ export class HardsSkillsService {
   constructor(private httpClient: HttpClient) { }
 
   getAllHS(): Observable<HardSkill[]> {
-    return this.httpClient.get<HardSkill[]>(this.urlHardsSkills);
+    return this.httpClient.get<HardSkill[]>(this.urlHardsSkills2 + 'list');
   }
 
   getHardSkill(id:number) {
-    return this.httpClient.get<HardSkill>(this.urlHardsSkills + `/${id}`);
+    return this.httpClient.get<HardSkill>(this.urlHardsSkills2 + `getOne/${id}`);
   }
 
   newHardSkill(hard:HardSkill):Observable<HardSkill>{
-    return this.httpClient.post<HardSkill>(this.urlHardsSkills, hard);
+    return this.httpClient.post<HardSkill>(this.urlHardsSkills2 + 'new', hard);
   }
 
   updateHardSkill(hard: HardSkill):Observable<any>{
-    const urlHardID = this.urlHardsSkills + `/${hard.id}`;
+    const urlHardID = this.urlHardsSkills2 + `edit/${hard.id}`;
     return this.httpClient.put<any>(urlHardID, hard);
   }
 
   deleteHard(id:number):Observable<any>{
-    const urlHardID = this.urlHardsSkills + `/${id}`;
+    const urlHardID = this.urlHardsSkills2 + `delete/${id}`;
     return this.httpClient.delete<any>(urlHardID);
   }
 }

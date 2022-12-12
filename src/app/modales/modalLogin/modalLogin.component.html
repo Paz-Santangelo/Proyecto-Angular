@@ -12,24 +12,21 @@
         <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="row justify-content-center mb-4">
           <div class="col-sm-10">
             <div>
-              <label for="userEmail"></label>
-              <input class="form-control text-center mb-2" type="email" placeholder="Ingrese su email" id="userEmail"
-                name="email" formControlName="email">
+              <label for="user"></label>
+              <input class="form-control text-center mb-2" type="text" placeholder="Ingrese su usuario" id="user"
+                name="user" formControlName="nombreUsuario">
             </div>
 
-            <div *ngIf="Mail?.errors && Mail?.touched">
-              <div *ngIf="Mail?.hasError('required')" class="alert alert-danger" role="alert">
-                Debe ingresar el email
-              </div>
-              <div *ngIf="Mail?.hasError('email')" class="alert alert-danger" role="alert">
-                El formato del email debe ser válido.
+            <div *ngIf="Usuario?.errors && Usuario?.touched">
+              <div *ngIf="Usuario?.hasError('required')" class="alert alert-danger" role="alert">
+                Debe ingresar su nombre de usuario
               </div>
             </div>
 
             <div>
               <label for="userPassword"></label>
-              <input class="form-control text-center mb-2" type="password" id="inputPassword" placeholder="Ingrese su clave"
-                id="userPassword" name="password" formControlName="password">
+              <input class="form-control text-center mb-2" type="password" id="inputPassword"
+                placeholder="Ingrese su clave" id="userPassword" name="userPassword" formControlName="password">
             </div>
 
             <div *ngIf="Password?.errors && Password?.touched">
@@ -40,9 +37,9 @@
           </div>
 
           <div class="modal-footer mt-4 justify-content-center">
-            <button type="submit" [disabled]="Mail?.hasError('required') || Password?.hasError('required')" class="btn text-center" data-bs-dismiss="modal">Ingresar</button>
+            <button type="submit" [disabled]="Usuario?.hasError('required') || Password?.hasError('required')"
+              class="btn text-center" data-bs-dismiss="modal">Ingresar</button>
           </div>
-
         </form>
       </div>
     </div>

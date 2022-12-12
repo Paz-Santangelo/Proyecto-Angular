@@ -18,7 +18,9 @@ export class EditarProyectoComponent implements OnInit {
       this.proyectosService.proyectoModal = data;
       alert("Proyecto modificado exitosamente");
       window.location.reload();
-    })
+    }, err => {
+      alert("Se ha producido un error, intente nuevamente");
+    });
   }
 
 }

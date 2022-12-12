@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/service/auth.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-headerAdmin',
@@ -8,11 +9,29 @@ import { AuthService } from 'src/app/service/auth.service';
 })
 export class HeaderAdminComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  isLogged = false;
+
+  constructor(private tokenService: TokenService) { }
 
   ngOnInit() {
-    this.isLoggedIn();
-    this.onLogout();
+    if(this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+  }
+
+  notLogged(): void {
+    this.tokenService.logOut();
+    window.location.reload();
+  }
+
+}
+
+/*
+ngOnInit() {
+    //this.isLoggedIn();
+    //this.onLogout();
   }
 
   isLoggedIn(){
@@ -21,5 +40,5 @@ export class HeaderAdminComponent implements OnInit {
 
   onLogout(){
     return this.authService.logout();
-  }
-}
+  }  
+*/

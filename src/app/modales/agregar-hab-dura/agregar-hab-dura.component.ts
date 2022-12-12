@@ -34,7 +34,9 @@ export class AgregarHabDuraComponent implements OnInit {
     this.hardsService.newHardSkill(this.hardSkillForm.value).subscribe(data => {
       alert("Nueva habilidad dura agregada");
       window.location.reload();
-    })
+    }, err => {
+      alert("Se ha producido un error, intente nuevamente");
+    });
   }
 
 }

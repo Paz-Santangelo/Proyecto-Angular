@@ -3,12 +3,12 @@ export class Proyecto {
     imgProyecto:string;
     nombreProyecto:string;
     descripcionProyecto:string;
-    link: string;
+    linkProyecto: string;
 
-    constructor(imgProyecto:string, nombreProyecto:string, descripcionProyecto:string, link:string){
+    constructor(imgProyecto:string, nombreProyecto:string, descripcionProyecto:string, linkProyecto:string){
         this.imgProyecto = imgProyecto;
         this.nombreProyecto = nombreProyecto;
         this.descripcionProyecto = descripcionProyecto;
-        this.link = link;
+        this.linkProyecto = linkProyecto;
     }
 }

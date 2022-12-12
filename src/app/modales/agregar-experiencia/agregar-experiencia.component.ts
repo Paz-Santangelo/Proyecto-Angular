@@ -48,9 +48,11 @@ export class AgregarExperienciaComponent implements OnInit {
 
   crearExp():void{
     //const nuevaExperiencia = new Experiencias(this.imgExperiencia, this.puesto, this.anio, this.descripcionTrabajo);
-    this.experienciaService.nuevaExp(this.experienciaForm.value).subscribe(data => {
+    this.experienciaService.newExp(this.experienciaForm.value).subscribe(data => {
       alert("Experiencia agregada");
       window.location.reload();
+    }, err => {
+      alert("Se ha producido un error, intente nuevamente");
     });
   }
 
