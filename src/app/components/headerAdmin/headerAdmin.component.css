@@ -64,15 +64,15 @@
  
  
  .nav-item:hover.instagram{
-     border: 3px solid #ca1995;
-     box-shadow: 0 0 15px #ca1995;
+     border: 3px solid #f306ac;
+     box-shadow: 0 0 15px #f306ac;
      transform: scale(1.1);
      transition: 0.5s;
  }
  
  .nav-item:hover .fa-instagram{
-     color: #ca1995;
-     text-shadow: 0 0 15px #ca1995;
+     color: #f306ac;
+     text-shadow: 0 0 15px #f306ac;
      transform: scale(1.1);
      transition: 0.5s;
  }
@@ -105,8 +105,10 @@
 }
 
 .user-admin:hover{
-    border: 3px solid #e71146;
-    box-shadow: 0 0 30px #e71146;
+    border: 3px solid #f50743;
+    box-shadow: 0 0 30px #f50743;
+    transform: scale(1.1);
+    transition: 0.5s;
 }
 
 /*icono user pagina admin*/
@@ -118,8 +120,8 @@
 }
 
 .user-admin:hover .icono-user-admin{
-    color: #e71146;
-    text-shadow: 0 0 30px #e71146;
+    color: #f50743;
+    text-shadow: 0 0 30px #f50743;
     transform: scale(1.1);
     transition: 0.5s;
 }

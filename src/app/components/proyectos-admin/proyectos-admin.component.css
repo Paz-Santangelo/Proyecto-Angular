@@ -1,5 +1,5 @@
 .circle-add-card{
-    background: rgb(128, 66, 104);
+    background: rgb(116, 11, 68);
     border-radius: 50%;
     width: 55px;
     height: 55px;
@@ -20,7 +20,7 @@
     width: 45px; 
     height: 45px;
     margin-right: 10px;
-    background: rgb(128, 66, 104);
+    background: rgb(116, 11, 68);
     padding-top: 2px;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .btn{
-    background: #692a64;
+    background: rgb(116, 11, 68);
     color: white;
     border-radius: 10px;
     border: none;
@@ -56,7 +56,7 @@
 }
 
 .btn:hover{
-    background: #692a64;
+    background: rgb(70, 6, 41);
     color: white;
     transform: scale(1.05);
     transition: 0.5s;

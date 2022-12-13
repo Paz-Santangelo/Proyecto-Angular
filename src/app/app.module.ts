@@ -7,7 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
 import { HeaderAdminComponent } from './components/headerAdmin/headerAdmin.component';
 import { LogoApComponent } from './components/logoAp/logoAp.component';
 import { ModalLoginComponent } from './modales/modalLogin/modalLogin.component';
@@ -27,13 +26,14 @@ import { AgregarHySComponent } from './modales/agregar-hy-s/agregar-hy-s.compone
 import { EditarHysComponent } from './modales/editar-hys/editar-hys.component';
 import { ScrollspyComponent } from './components/scrollspy/scrollspy.component';
 import { HomeComponent } from './components/home/home.component';
-import { AdminComponent } from './components/admin/admin.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { HardsSkillsComponent } from './components/hards-skills/hards-skills.component';
 import { EditarHabDurasComponent } from './modales/editar-hab-duras/editar-hab-duras.component';
 import { AgregarHabDuraComponent } from './modales/agregar-hab-dura/agregar-hab-dura.component';
 import { interceptorProvider } from './service/interceptor.service';
+import { AdminComponent } from './components/admin/admin.component';
+
 
 
 @NgModule({
@@ -58,12 +58,12 @@ import { interceptorProvider } from './service/interceptor.service';
     EditarHysComponent,
     ScrollspyComponent,
     HomeComponent,
-    AdminComponent,
     FooterComponent,
     SkillsComponent,
     HardsSkillsComponent,
     EditarHabDurasComponent,
-    AgregarHabDuraComponent
+    AgregarHabDuraComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,

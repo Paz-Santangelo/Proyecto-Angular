@@ -1,5 +1,5 @@
 .circle-add-card{
-    background: rgb(128, 66, 104);
+    background: rgb(116, 11, 68);
     border-radius: 50%;
     width: 55px;
     height: 55px;
@@ -19,7 +19,7 @@
     height: 45px;
     margin-top: -40px;
     margin-right: 15px;
-    background: rgb(128, 66, 104);
+    background: rgb(116, 11, 68);
 }
 
 #circulos-edicion:hover{
