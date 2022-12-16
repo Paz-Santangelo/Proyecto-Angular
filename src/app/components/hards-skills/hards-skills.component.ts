@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HardSkill } from 'src/app/models/hardSkill';
-import { Hys } from 'src/app/models/hys';
-import { AuthService } from 'src/app/service/auth.service';
 import { HardsSkillsService } from 'src/app/service/HardsSkills.service';
 import { TokenService } from 'src/app/service/token.service';
 

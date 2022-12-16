@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Experiencias } from 'src/app/models/experiencia';
-import { AuthService } from 'src/app/service/auth.service';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
 import { TokenService } from 'src/app/service/token.service';
 
@@ -32,7 +31,6 @@ export class ExperienciasAdminComponent implements OnInit {
 
   //Este metodo sirve para traer una determinada experiencia al hacer click en el icono del lapiz
   traerUnaExperiencia(id: number) {
-    //console.log(id);
     this.experienciaService.getExperiencia(id).subscribe(data => {
       this.experienciaService.experienciaModal = data;
     });

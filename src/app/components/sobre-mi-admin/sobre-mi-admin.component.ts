@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { perfil } from 'src/app/models/perfil.model';
-import { AuthService } from 'src/app/service/auth.service';
 import { PerfilService } from 'src/app/service/perfil.service';
 import { TokenService } from 'src/app/service/token.service';
 
@@ -25,7 +24,6 @@ export class SobreMiAdminComponent implements OnInit {
     } else {
       this.isLogged = false;
     }
-
   }
 
   traerPerfil(id:number){

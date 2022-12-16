@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Hys } from 'src/app/models/hys';
-import { AuthService } from 'src/app/service/auth.service';
 import { HySService } from 'src/app/service/HyS.service';
 import { TokenService } from 'src/app/service/token.service';
 
