@@ -11,7 +11,7 @@
         <form [formGroup]="educacionForm" (ngSubmit)="crearNuevoCurso()" #form="ngForm">
           <div class="form-group m-3">
             <label for="imagenCurso">Logo de la Institución</label>
-            <input type="file" class="form-control" name="imagenCurso" formControlName="imgCurso">
+            <input type="file" class="form-control" name="imagenCurso" formControlName="imgCurso" (change)="uploadImage($event)">
           </div>
           <div *ngIf="imagenCurso?.errors && imagenCurso?.touched">
             <div *ngIf="imagenCurso?.hasError('required')" class="alert alert-danger" role="alert">

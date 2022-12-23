@@ -11,7 +11,7 @@
           <form (ngSubmit)="editarProyecto()" novalidate #form="ngForm">
             <div class="form-group m-3">
               <label for="imgagenExp">Imagen del Proyecto</label>
-              <input type="file" class="form-control" id="imgagenExp" name="imgExp" [(ngModel)]="proyectosService.proyectoModal.imgProyecto">
+              <input type="file" class="form-control" id="imgagenExp" name="imgExp" [(ngModel)]="proyectosService.proyectoModal.imgProyecto" (change)="uploadImage($event)">
             </div>
             <div class="form-group m-3">
               <label for="puestoTrabajo">Nombre del Proyecto</label>

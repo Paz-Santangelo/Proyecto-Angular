@@ -10,7 +10,7 @@
         <form [formGroup]="experienciaForm" (ngSubmit)="crearExp()" novalidate #form="ngForm">
           <div class="form-group m-3">
             <label for="imagenExp">Logo de la empresa</label>
-            <input type="file" class="form-control" id="imagenExp" name="imgExp" formControlName="imgExperiencia">
+            <input type="file" class="form-control" id="imagenExp" name="imgExp" formControlName="imgExperiencia" (change)="uploadImage($event)">
           </div>
           <div *ngIf="imgExp?.errors && imgExp?.touched">
             <div *ngIf="imgExp?.hasError('required')" class="alert alert-danger" role="alert">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ImagenesService } from 'src/app/service/imagenes.service';
 import { PerfilService } from 'src/app/service/perfil.service';
 
 @Component({
@@ -8,12 +9,13 @@ import { PerfilService } from 'src/app/service/perfil.service';
 })
 export class EditarSobreMiComponent implements OnInit {
 
-  constructor(public perfilService: PerfilService) { }
+  constructor(public perfilService: PerfilService, public imagenesService: ImagenesService) { }
 
   ngOnInit(): void {
   }
 
   editarPerfil(){
+    this.perfilService.perfilModal.imgPerfil = this.imagenesService.url;
     this.perfilService.updateProfile(this.perfilService.perfilModal).subscribe(data => {
       this.perfilService.perfilModal = data;
       alert("Perfil modificado exitosamente");
@@ -23,4 +25,8 @@ export class EditarSobreMiComponent implements OnInit {
     });
   }
 
+  uploadImage($event: any) {
+    const name = 'Perfil';
+    this.imagenesService.uploadImage($event, name);
+  }
 }

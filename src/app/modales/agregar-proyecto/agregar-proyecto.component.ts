@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Proyecto } from 'src/app/models/proyecto';
+import { ImagenesService } from 'src/app/service/imagenes.service';
 import { ProyectosService } from 'src/app/service/proyectos.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class AgregarProyectoComponent implements OnInit {
 
   proyectoForm: FormGroup;
 
-  constructor(private proyectosService: ProyectosService, private formBuilder: FormBuilder) {
+  constructor(private proyectosService: ProyectosService, private formBuilder: FormBuilder, public imagenesService: ImagenesService) {
     this.proyectoForm = this.formBuilder.group({
       imgProyecto: ['', [Validators.required]],
       nombreProyecto: ['', [Validators.required]],
@@ -41,6 +42,7 @@ export class AgregarProyectoComponent implements OnInit {
   }
 
   crearNuevoProyecto(): void {
+    this.proyectoForm.value.imgProyecto = this.imagenesService.url;
     this.proyectosService.newProject(this.proyectoForm.value).subscribe(data => {
       alert("Nuevo proyecto agregado");
       window.location.reload();
@@ -49,4 +51,8 @@ export class AgregarProyectoComponent implements OnInit {
     });
   }
 
+  uploadImage($event: any) {
+    const name = 'Proyecto';
+    this.imagenesService.uploadImage($event, name);
+  }
 }

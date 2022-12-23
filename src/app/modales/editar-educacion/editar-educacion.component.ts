@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EducacionService } from 'src/app/service/educacion.service';
+import { ImagenesService } from 'src/app/service/imagenes.service';
 
 @Component({
   selector: 'app-editar-educacion',
@@ -8,12 +9,13 @@ import { EducacionService } from 'src/app/service/educacion.service';
 })
 export class EditarEducacionComponent implements OnInit {
 
-  constructor(public educacionService: EducacionService) { }
+  constructor(public educacionService: EducacionService, public imagenesService: ImagenesService) { }
 
   ngOnInit(): void {
   }
 
   editarEducacion(){
+    this.educacionService.educacionModal.imgCurso = this.imagenesService.url;
     this.educacionService.updateEducation(this.educacionService.educacionModal).subscribe(data => {
       this.educacionService.educacionModal = data;
       alert("Educación modificada");
@@ -21,5 +23,10 @@ export class EditarEducacionComponent implements OnInit {
     }, err => {
       alert("Se ha producido un error, intente nuevamente");
     });
+  }
+
+  uploadImage($event: any) {
+    const name = 'Educacion';
+    this.imagenesService.uploadImage($event, name);
   }
 }

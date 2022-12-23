@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Experiencias } from 'src/app/models/experiencia';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
+import { ImagenesService } from 'src/app/service/imagenes.service';
 
 @Component({
   selector: 'app-agregar-experiencia',
@@ -12,12 +12,7 @@ export class AgregarExperienciaComponent implements OnInit {
 
   experienciaForm: FormGroup;
 
-  /*imgExperiencia: string = '';
-  puesto: string = '';
-  anio: string = '';
-  descripcionTrabajo: string = '';*/
-
-  constructor(private experienciaService: ExperienciaService, private formBuilder: FormBuilder) {
+  constructor(private experienciaService: ExperienciaService, private formBuilder: FormBuilder, public imagenesService: ImagenesService) {
     this.experienciaForm = this.formBuilder.group({
       imgExperiencia: ['', [Validators.required]],
       puesto: ['', [Validators.required]],
@@ -47,13 +42,23 @@ export class AgregarExperienciaComponent implements OnInit {
 
 
   crearExp():void{
-    //const nuevaExperiencia = new Experiencias(this.imgExperiencia, this.puesto, this.anio, this.descripcionTrabajo);
+    this.experienciaForm.value.imgExperiencia = this.imagenesService.url;
     this.experienciaService.newExp(this.experienciaForm.value).subscribe(data => {
       alert("Experiencia agregada");
+      this.clearForm();
       window.location.reload();
     }, err => {
       alert("Se ha producido un error, intente nuevamente");
     });
   }
 
+  clearForm() {
+    this.imagenesService.url = "";
+    this.experienciaForm.reset({});
+  }
+
+  uploadImage($event: any) {
+    const name = 'Experiencia';
+    this.imagenesService.uploadImage($event, name);
+  }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Experiencias } from 'src/app/models/experiencia';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
+import { ImagenesService } from 'src/app/service/imagenes.service';
 
 @Component({
   selector: 'app-editar-exp',
@@ -11,13 +11,13 @@ export class EditarExpComponent implements OnInit {
 
   //public values:Experiencias;
 
-  constructor(public experienciaService: ExperienciaService) { }
+  constructor(public experienciaService: ExperienciaService, public imagenesService: ImagenesService) { }
 
   ngOnInit(): void {
-    //this.values=this.experienciaService.experienciaModal;
-    //console.log(this.values);
   }
+
   editarExp(){
+    this.experienciaService.experienciaModal.imgExperiencia = this.imagenesService.url;
     this.experienciaService.updateExp(this.experienciaService.experienciaModal).subscribe(datos => {
       this.experienciaService.experienciaModal = datos;
       alert("Experiencia modificada exitosamente");
@@ -27,4 +27,8 @@ export class EditarExpComponent implements OnInit {
     });
   }
 
+  uploadImage($event: any) {
+    const name = 'Experiencia'
+    this.imagenesService.uploadImage($event, name);
+  }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Proyecto } from 'src/app/models/proyecto';
 import { ProyectosService } from 'src/app/service/proyectos.service';
 import { TokenService } from 'src/app/service/token.service';
@@ -13,7 +14,11 @@ export class ProyectosAdminComponent implements OnInit {
   proyectos: Proyecto[] = [];
   isLogged: boolean = false;
 
-  constructor(private proyectosService: ProyectosService, private tokenService: TokenService) { }
+  constructor(private proyectosService: ProyectosService, private tokenService: TokenService, private sanitizer: DomSanitizer) { }
+
+  public getSanitizeUrl(url: string) {
+    return this.sanitizer.bypassSecurityTrustUrl(url);
+  }
 
   ngOnInit(): void {
     this.proyectosService.getAllProjects().subscribe(data => this.proyectos = data);

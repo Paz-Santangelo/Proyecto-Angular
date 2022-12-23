@@ -10,7 +10,7 @@
           <form [formGroup]="proyectoForm" (ngSubmit)="crearNuevoProyecto()" novalidate #form="ngForm">
             <div class="form-group m-3">
               <label for="imgProyecto">Imagen del Proyecto</label>
-              <input type="file" class="form-control" id="imgProyecto" name="imgProyecto" formControlName="imgProyecto">
+              <input type="file" class="form-control" id="imgProyecto" name="imgProyecto" formControlName="imgProyecto" (change)="uploadImage($event)">
             </div>
             <div class="form-group m-3">
               <label for="nombreProyecto">Nombre del Proyecto</label>

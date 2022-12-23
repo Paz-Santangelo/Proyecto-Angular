@@ -32,9 +32,9 @@ import { HardsSkillsComponent } from './components/hards-skills/hards-skills.com
 import { EditarHabDurasComponent } from './modales/editar-hab-duras/editar-hab-duras.component';
 import { AgregarHabDuraComponent } from './modales/agregar-hab-dura/agregar-hab-dura.component';
 import { interceptorProvider } from './service/interceptor.service';
-import { AdminComponent } from './components/admin/admin.component';
-
-
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -63,7 +63,7 @@ import { AdminComponent } from './components/admin/admin.component';
     HardsSkillsComponent,
     EditarHabDurasComponent,
     AgregarHabDuraComponent,
-    AdminComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -71,7 +71,9 @@ import { AdminComponent } from './components/admin/admin.component';
     FormsModule,
     ReactiveFormsModule,
     NgCircleProgressModule.forRoot({}),
-    HttpClientModule
+    HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
   providers: [interceptorProvider],
   bootstrap: [AppComponent]

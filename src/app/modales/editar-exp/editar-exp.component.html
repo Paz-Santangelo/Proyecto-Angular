@@ -11,7 +11,7 @@
           <form #form="ngForm">
             <div class="form-group m-3">
               <label for="imgagenExp">Imagen empresa</label>
-              <input type="file" class="form-control text-center" id="imgagenExp" name="imgExp" [(ngModel)]="experienciaService.experienciaModal.imgExperiencia">
+              <input type="file" class="form-control text-center" id="imgagenExp" name="imgExp" [(ngModel)]="experienciaService.experienciaModal.imgExperiencia" (change)="uploadImage($event)">
             </div>
             <div class="form-group m-3">
               <label for="puestoTrabajo">Título del Puesto</label>
