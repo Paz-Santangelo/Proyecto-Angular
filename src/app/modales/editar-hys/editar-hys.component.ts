@@ -8,11 +8,13 @@ import { HySService } from 'src/app/service/HyS.service';
 })
 export class EditarHysComponent implements OnInit {
 
+   //Se inyectan los servicios que se van a utilizar.
   constructor(public skillService: HySService) { }
 
   ngOnInit(): void {
   }
 
+  //Se obtienen todos los valores guardados en modalHards, ubicado en el servicio de habilidades y se los envía a la base de datos.
   editarHabilidad(){
     this.skillService.updateSkill(this.skillService.habilidadModal).subscribe(data => {
       this.skillService.habilidadModal = data;

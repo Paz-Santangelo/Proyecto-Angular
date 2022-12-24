@@ -12,6 +12,9 @@ export class EducacionService {
 
   constructor(private httpClient: HttpClient) { }
 
+  /* Propiedad de tipo educacion. Lo utilizo para que los inputs, del modal editar, contengan los valores de la
+  card seleccionada.
+  */
   educacionModal : Educacion = {
     id: null,
     imgCurso: '',
@@ -20,6 +23,9 @@ export class EducacionService {
     descripcionCurso: ''
   }
 
+  /* A partir de acá, comienzan los métodos responsables de comunicarse con el backend y así, lograr traer
+  crear, actualizar o eliminar cursos.
+  */
   getAllEducaciones():Observable<Educacion[]>{
     return this.httpClient.get<Educacion[]>(this.urlEdu2 + 'list');
   }

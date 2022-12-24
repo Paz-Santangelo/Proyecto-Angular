@@ -10,9 +10,12 @@ import { HySService } from 'src/app/service/HyS.service';
 })
 export class AgregarHySComponent implements OnInit {
 
+  //Se inicializa el formulario.
   softSkillForm: FormGroup;
 
+  //Se inyectan los servicios que se van a utilizar.
   constructor(private skillsService: HySService, private formBuilder: FormBuilder) {
+    //Se crea el formulario, con sus propiedades y validaciones.
     this.softSkillForm = this.formBuilder.group ({
       porcentaje: ['', [Validators.required]],
       nombre: ['', [Validators.required]]
@@ -30,6 +33,7 @@ export class AgregarHySComponent implements OnInit {
     return this.softSkillForm.get("nombre");
   }
 
+  /*Esta función sirve para mandar los valores del formulario, a la base de datos. Pasando a través del servicio de educación y posteriormente, del back-end.*/
   crearNewSkill():void{
     this.skillsService.newSkill(this.softSkillForm.value).subscribe(data => {
       alert("Nueva habilidad agregada");

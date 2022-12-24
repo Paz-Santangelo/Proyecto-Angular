@@ -12,6 +12,9 @@ export class HardsSkillsService {
   //urlHardsSkills = 'http://localhost:3000/hardsSkill';
   urlHardsSkills2 = 'http://localhost:8080/hards_skills/';
 
+  /* Propiedad de tipo HardSkill. Lo utilizo para que los inputs, del modal editar, contengan los valores de la
+  card seleccionada.
+  */
   modalHards: HardSkill = {
     porcentaje: '',
     nombre: ''
@@ -19,6 +22,10 @@ export class HardsSkillsService {
 
   constructor(private httpClient: HttpClient) { }
 
+  
+  /* A partir de acá, comienzan los métodos responsables de comunicarse con el backend y así, lograr traer
+  crear, actualizar o eliminar habilidades duras.
+  */
   getAllHS(): Observable<HardSkill[]> {
     return this.httpClient.get<HardSkill[]>(this.urlHardsSkills2 + 'list');
   }

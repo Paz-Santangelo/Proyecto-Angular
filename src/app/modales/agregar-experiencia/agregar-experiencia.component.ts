@@ -10,9 +10,12 @@ import { ImagenesService } from 'src/app/service/imagenes.service';
 })
 export class AgregarExperienciaComponent implements OnInit {
 
+  //Se inicializa el formulario.
   experienciaForm: FormGroup;
 
+  //Se inyectan los servicios que se van a utilizar.
   constructor(private experienciaService: ExperienciaService, private formBuilder: FormBuilder, public imagenesService: ImagenesService) {
+    //Se crea el formulario, con sus propiedades y validaciones.
     this.experienciaForm = this.formBuilder.group({
       imgExperiencia: ['', [Validators.required]],
       puesto: ['', [Validators.required]],
@@ -41,7 +44,12 @@ export class AgregarExperienciaComponent implements OnInit {
   }
 
 
+  /*Esta función sirve para mandar los valores del formulario, a la base de datos. Pasando a través del servicio de educación y posteriormente, del back-end. */
   crearExp():void{
+    /*
+    Acá se obtiene la propiedad y valor de imgCurso y se introduce la url obtenida de la imagen, proveniente de Firebase y se la manda a la base de datos, 
+    junto con los demás valores del formulario.
+    */
     this.experienciaForm.value.imgExperiencia = this.imagenesService.url;
     this.experienciaService.newExp(this.experienciaForm.value).subscribe(data => {
       alert("Experiencia agregada");
@@ -57,6 +65,7 @@ export class AgregarExperienciaComponent implements OnInit {
     this.experienciaForm.reset({});
   }
 
+  //Esta función obtiene la imagen del input de tipo File, para, posteriormente, mandarla a Firebase.
   uploadImage($event: any) {
     const name = 'Experiencia';
     this.imagenesService.uploadImage($event, name);

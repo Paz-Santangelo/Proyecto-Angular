@@ -10,6 +10,9 @@ export class HySService {
   //urlHabilidades = 'http://localhost:3000/hardSoft';
   urlSoftSkill = 'http://localhost:8080/soft_skills/';
 
+  /* Propiedad de tipo Hys. Lo utilizo para que los inputs, del modal editar, contengan los valores de la
+  card seleccionada.
+  */
   habilidadModal: Hys = {
     porcentaje: '',
     nombre: ''
@@ -17,6 +20,9 @@ export class HySService {
 
   constructor(private httpClient: HttpClient) { }
 
+  /* A partir de acá, comienzan los métodos responsables de comunicarse con el backend y así, lograr traer
+  crear, actualizar o eliminar habilidades blandas.
+  */
   getAllSkills():Observable<Hys[]> {
     return this.httpClient.get<Hys[]>(this.urlSoftSkill + 'list');
   }

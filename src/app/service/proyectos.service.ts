@@ -11,6 +11,10 @@ export class ProyectosService {
   //urlProyectos = 'http://localhost:3000/proyectos';
   urlProyectos2 = 'http://localhost:8080/proyectos/';
 
+  
+  /* Propiedad de tipo proyecto. Lo utilizo para que los inputs, del modal editar, contengan los valores de la
+  card seleccionada.
+  */
   proyectoModal: Proyecto = {
     id: null,
     imgProyecto: '',
@@ -21,6 +25,9 @@ export class ProyectosService {
 
   constructor(private httpClient: HttpClient) { }
 
+   /* A partir de acá, comienzan los métodos responsables de comunicarse con el backend y así, lograr traer
+  crear, actualizar o eliminar proyectos.
+  */
   getAllProjects():Observable<Proyecto[]>{
     return this.httpClient.get<Proyecto[]>(this.urlProyectos2 + 'list');
   }

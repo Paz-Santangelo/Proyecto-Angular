@@ -12,6 +12,9 @@ export class ExperienciaService {
 
   constructor(private httpClient: HttpClient) { }
 
+  /* Propiedad de tipo experiencia. Lo utilizo para que los inputs, del modal editar, contengan los valores de la
+  card seleccionada.
+  */
   experienciaModal : Experiencias = {
     id:null,
     imgExperiencia: '',
@@ -20,6 +23,9 @@ export class ExperienciaService {
     descripcionTrabajo: ''
   }
 
+  /* A partir de acá, comienzan los métodos responsables de comunicarse con el backend y así, lograr traer
+  crear, actualizar o eliminar experiencias.
+  */
   getAllExperiencias():Observable<Experiencias[]>{
     return this.httpClient.get<Experiencias[]>(this.URLexp2 + 'list');
   }
