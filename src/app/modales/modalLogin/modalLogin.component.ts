@@ -43,17 +43,19 @@ export class ModalLoginComponent implements OnInit {
 
   onLogin() {
     this.authService.login(this.loginForm.value).subscribe(data => {
-      this.isLogged = true;
+      /*this.isLogged = true;
       this.notLogged = false;
       this.tokenService.setToken(data.token);
       this.tokenService.setUsername(data.nombreUsuario);
       this.tokenService.setAuthorities(data.authorities);
-      this.roles = data.authorities;
-      window.location.reload();
+      this.roles = data.authorities;*/
+      console.log(data);
+      //window.location.reload();
     }, err => {
-      this.isLogged = false;
-      this.notLogged = true;
-      this.errorMsj = err.error.mensaje;
+      //this.isLogged = false;
+      //this.notLogged = true;
+      //this.errorMsj = err.error.mensaje;
+      console.log("Error de servicio: " + err);
       alert("Usuario o Contraseña incorrectos");
       }
     )

@@ -10,12 +10,12 @@ import { JwtDto } from '../models/jwt-dto';
 export class AuthService {
 
   //AuthUrl: string = 'http://localhost:8080/auth/';
-  AuthUrl: 'https://portfoliobackend-1hn5.onrender.com/auth/';  
+  AuthUrl: 'https://portfoliobackend-1hn5.onrender.com/auth/login';  
 
   constructor(private httpClient: HttpClient) { }
 
-  public login(loginUser: Login): Observable<JwtDto>{
-    return this.httpClient.post<JwtDto>(this.AuthUrl + 'login', loginUser);
+  public login(loginUser: Login): Observable<any>{
+    return this.httpClient.post<any>(this.AuthUrl, loginUser);
   }
 
 }
