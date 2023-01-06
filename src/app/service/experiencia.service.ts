@@ -8,7 +8,8 @@ import { Experiencias } from '../models/experiencia';
 })
 export class ExperienciaService {
   //URLexp = 'http://localhost:3000/experiencias';
-  URLexp2 = 'http://localhost:8080/experiencia_laboral/';
+  //URLexp2 = 'http://localhost:8080/experiencia_laboral/';
+  URLexp2 = 'https://portfoliobackend-1hn5.onrender.com/experiencia_laboral/';
 
   constructor(private httpClient: HttpClient) { }
 

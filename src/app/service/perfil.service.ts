@@ -9,7 +9,8 @@ import { perfil } from '../models/perfil.model';
 export class PerfilService {
 
   //URL = 'http://localhost:3000/perfil';
-  URL2 = 'http://localhost:8080/perfil/';
+  //URL2 = 'http://localhost:8080/perfil/';
+  URL2 = 'https://portfoliobackend-1hn5.onrender.com/perfil/';
 
   perfilModal: perfil = {
     id:null,

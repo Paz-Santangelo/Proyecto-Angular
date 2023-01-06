@@ -10,7 +10,9 @@ import { HardSkill } from '../models/hardSkill';
 export class HardsSkillsService {
 
   //urlHardsSkills = 'http://localhost:3000/hardsSkill';
-  urlHardsSkills2 = 'http://localhost:8080/hards_skills/';
+  //urlHardsSkills2 = 'http://localhost:8080/hards_skills/';
+  urlHardsSkills2 = 'https://portfoliobackend-1hn5.onrender.com/hards_skills/';
+  
 
   /* Propiedad de tipo HardSkill. Lo utilizo para que los inputs, del modal editar, contengan los valores de la
   card seleccionada.

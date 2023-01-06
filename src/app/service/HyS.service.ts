@@ -8,7 +8,9 @@ import { Hys } from '../models/hys';
 })
 export class HySService {
   //urlHabilidades = 'http://localhost:3000/hardSoft';
-  urlSoftSkill = 'http://localhost:8080/soft_skills/';
+  //urlSoftSkill = 'http://localhost:8080/soft_skills/';
+  urlSoftSkill = 'https://portfoliobackend-1hn5.onrender.com/soft_skills/';
+
 
   /* Propiedad de tipo Hys. Lo utilizo para que los inputs, del modal editar, contengan los valores de la
   card seleccionada.

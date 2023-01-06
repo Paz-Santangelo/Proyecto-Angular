@@ -9,7 +9,8 @@ import { Proyecto } from '../models/proyecto';
 export class ProyectosService {
 
   //urlProyectos = 'http://localhost:3000/proyectos';
-  urlProyectos2 = 'http://localhost:8080/proyectos/';
+  //urlProyectos2 = 'http://localhost:8080/proyectos/';
+  urlProyectos2 = 'https://portfoliobackend-1hn5.onrender.com/proyectos/';
 
   
   /* Propiedad de tipo proyecto. Lo utilizo para que los inputs, del modal editar, contengan los valores de la
